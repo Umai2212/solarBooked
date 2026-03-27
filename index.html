@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarBooked — AI Voice Systems for Solar Companies</title>
+<meta name="description" content="SolarBooked builds AI voice systems that call your solar leads within 60 seconds, qualify them, and book appointments automatically. Serving US, Canada, and UK solar companies.">
+<meta name="keywords" content="solar lead follow-up, AI voice system, solar company automation, lead qualification, appointment booking, solar sales">
+<meta name="author" content="SolarBooked">
+
+<!-- Open Graph -->
+<meta property="og:title" content="SolarBooked — AI Voice Systems for Solar Companies">
+<meta property="og:description" content="Your solar leads get a phone call in 60 seconds — automatically. AI that qualifies and books appointments while you sleep.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://solarbooked.com">
+<meta property="og:image" content="https://solarbooked.com/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SolarBooked — AI Voice Systems for Solar Companies">
+<meta name="twitter:description" content="AI that calls your solar leads in 60 seconds, qualifies them, and books appointments automatically.">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SolarBooked",
+  "description": "Done-for-you AI voice automation service for solar companies. We build AI voice systems that call solar leads within 60 seconds of form submission.",
+  "url": "https://solarbooked.com",
+  "email": "umair@solarbooked.com",
+  "areaServed": ["US", "CA", "GB"],
+  "serviceType": "AI Voice Automation",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Demo Call",
+      "price": "99",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Full Setup",
+      "price": "500",
+      "priceCurrency": "USD"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0c0f;
+    --bg2: #0f1218;
+    --bg3: #141820;
+    --card: #161c26;
+    --card2: #1a2030;
+    --border: rgba(255,255,255,0.06);
+    --border2: rgba(255,255,255,0.1);
+    --yellow: #f5c518;
+    --yellow-dim: #c9a012;
+    --yellow-glow: rgba(245, 197, 24, 0.15);
+    --yellow-glow2: rgba(245, 197, 24, 0.08);
+    --orange: #ff7c2a;
+    --text: #e8ecf0;
+    --text2: #9aa3ad;
+    --text3: #6b7580;
+    --white: #ffffff;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 4px 40px rgba(0,0,0,0.4);
+    --shadow-yellow: 0 0 40px rgba(245, 197, 24, 0.2);
+    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── GRAIN OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--yellow-dim); border-radius: 3px; }
+
+  /* ─── TYPOGRAPHY ─── */
+  h1, h2, h3, h4 { line-height: 1.15; }
+
+  .display { font-family: var(--font-display); letter-spacing: 0.02em; }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 100px 0; position: relative; }
+
+  /* ─── BUTTONS ─── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    border: none;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: #0a0c0f;
+  }
+
+  .btn-primary:hover {
+    background: #ffd040;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(245, 197, 24, 0.35);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border2);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--yellow);
+    color: var(--yellow);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-yellow {
+    background: transparent;
+    color: var(--yellow);
+    border: 1.5px solid var(--yellow);
+  }
+
+  .btn-outline-yellow:hover {
+    background: var(--yellow-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(245, 197, 24, 0.2);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0;
+    transition: var(--transition);
+  }
+
+  nav.scrolled {
+    background: rgba(10, 12, 15, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--yellow); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 68px 0 0 0;
+    background: rgba(10, 12, 15, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color var(--transition);
+  }
+
+  .mobile-menu a:hover { color: var(--yellow); }
+
+  /* ─── PAGE SYSTEM ─── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(245, 197, 24, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 80%, rgba(255, 124, 42, 0.04) 0%, transparent 50%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    z-index: 0;
+  }
+
+  /* Geometric decoration */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    z-index: 0;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow-glow2);
+    border: 1px solid rgba(245, 197, 24, 0.2);
+    border-radius: 100px;
+    padding: 6px 14px 6px 8px;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease both;
+  }
+
+  .hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+
+  .hero-badge span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--yellow);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 8vw, 6.5rem);
+    letter-spacing: 0.02em;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s 0.1s ease both;
+    max-width: 900px;
+  }
+
+  .hero-headline .accent { color: var(--yellow); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text2);
+    max-width: 620px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.6s 0.2s ease both;
+    font-weight: 400;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s 0.3s ease both;
+  }
+
+  .trust-line {
+    font-size: 0.82rem;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: fadeInUp 0.6s 0.4s ease both;
+  }
+
+  .trust-line::before { content: '✓'; color: var(--yellow); font-weight: 700; }
+
+  .hero-demo-box {
+    margin-top: 3.5rem;
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: var(--radius-lg);
+    aspect-ratio: 16/7;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    animation: fadeInUp 0.6s 0.5s ease both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-demo-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(245,197,24,0.04) 0%, transparent 70%);
+  }
+
+  .demo-play-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--yellow-glow);
+    border: 1.5px solid rgba(245,197,24,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .demo-play-icon::after {
+    content: '';
+    border-style: solid;
+    border-width: 10px 0 10px 18px;
+    border-color: transparent transparent transparent var(--yellow);
+    margin-left: 4px;
+  }
+
+  .demo-label {
+    font-size: 0.9rem;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 16px 24px;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--yellow);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--text3);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── PROBLEM SECTION ─── */
+  #problem {
+    background: var(--bg2);
+  }
+
+  #problem::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2), transparent);
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-body {
+    max-width: 680px;
+    color: var(--text2);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .problem-callout {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--yellow);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .pain-card {
+    background: var(--card);
+    padding: 2.5rem;
+    transition: background var(--transition);
+  }
+
+  .pain-card:hover { background: var(--card2); }
+
+  .pain-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .pain-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .pain-body {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  /* ─── SOLUTION ─── */
+  #solution {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #solution::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245,197,24,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .solution-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .solution-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  .solution-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(245,197,24,0.1);
+  }
+
+  .solution-card:hover::before { opacity: 1; }
+
+  .sol-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .sol-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .sol-body {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  #how-it-works {
+    background: var(--bg2);
+  }
+
+  #how-it-works::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2), transparent);
+  }
+
+  .steps-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 3.5rem;
+    position: relative;
+  }
+
+  .steps-line {
+    position: absolute;
+    top: 28px;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--yellow), var(--orange), var(--yellow));
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  .step-item {
+    text-align: center;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    background: var(--card);
+    border: 1.5px solid var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--yellow);
+    box-shadow: 0 0 20px rgba(245,197,24,0.15);
+  }
+
+  .step-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+
+  .step-body {
+    font-size: 0.85rem;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 0.4rem;
+  }
+
+  .hiw-cta {
+    text-align: center;
+    margin-top: 3.5rem;
+  }
+
+  /* ─── REACTIVATION ─── */
+  #reactivation {
+    position: relative;
+  }
+
+  .reactivation-inner {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reactivation-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(245,197,24,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .reactivation-inner::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--yellow), var(--orange), transparent);
+  }
+
+  .react-stat {
+    background: var(--bg);
+    border: 1px solid var(--border2);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+
+  .react-stat-num {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--yellow);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-shadow: var(--shadow-yellow);
+  }
+
+  .react-stat-label {
+    font-size: 0.82rem;
+    color: var(--text2);
+    line-height: 1.5;
+    max-width: 140px;
+    margin: 0 auto;
+  }
+
+  /* ─── PRICING ─── */
+  #pricing {
+    background: var(--bg2);
+  }
+
+  #pricing::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2), transparent);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .pricing-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .pricing-card.featured {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 1px rgba(245,197,24,0.15), 0 20px 60px rgba(245,197,24,0.08);
+  }
+
+  .pricing-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
+  }
+
+  .pricing-tag {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--yellow);
+    color: #0a0c0f;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .pricing-tier {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-price {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    color: var(--yellow);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .pricing-price-note {
+    font-size: 0.82rem;
+    color: var(--text3);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 1.5rem 0;
+  }
+
+  .pricing-desc {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.88rem;
+    color: var(--text2);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+
+  .pricing-features li::before {
+    content: '✓';
+    color: var(--yellow);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── FAQ ─── */
+  #faq {
+    position: relative;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition);
+  }
+
+  .faq-item:hover { border-color: var(--border2); }
+
+  .faq-q {
+    padding: 1.5rem 2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: color var(--transition);
+    user-select: none;
+  }
+
+  .faq-q:hover { color: var(--yellow); }
+
+  .faq-toggle {
+    width: 24px;
+    height: 24px;
+    background: var(--yellow-glow2);
+    border: 1px solid rgba(245,197,24,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+    font-size: 0.8rem;
+    color: var(--yellow);
+  }
+
+  .faq-item.open .faq-toggle {
+    background: var(--yellow);
+    color: #0a0c0f;
+    transform: rotate(45deg);
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+    padding: 0 2rem;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 200px;
+    padding: 0 2rem 1.5rem;
+  }
+
+  /* ─── FINAL CTA ─── */
+  #final-cta {
+    background: var(--bg2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2), transparent);
+  }
+
+  .final-cta-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(245,197,24,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .final-cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .final-cta-body {
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.05rem;
+    color: var(--text2);
+    line-height: 1.75;
+  }
+
+  .final-cta-note {
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+    color: var(--text3);
+  }
+
+  .final-cta-note a {
+    color: var(--yellow);
+    text-decoration: none;
+  }
+
+  .final-cta-note a:hover { text-decoration: underline; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 60px 0 40px;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand .nav-logo { font-size: 1.4rem; }
+
+  .footer-tagline {
+    font-size: 0.88rem;
+    color: var(--text3);
+    margin-top: 0.75rem;
+    line-height: 1.6;
+    max-width: 260px;
+  }
+
+  .footer-col-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-links a {
+    font-size: 0.88rem;
+    color: var(--text2);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .footer-links a:hover { color: var(--yellow); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--text3);
+  }
+
+  .footer-tech {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .tech-badge {
+    font-size: 0.72rem;
+    color: var(--text3);
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── ABOUT PAGE ─── */
+  .about-hero {
+    padding: 140px 0 80px;
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(245,197,24,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .about-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--white);
+    letter-spacing: 0.02em;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    line-height: 1.05;
+  }
+
+  .about-body {
+    max-width: 660px;
+    font-size: 1.05rem;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 5rem;
+  }
+
+  .pillar {
+    border-left: 2px solid var(--yellow);
+    padding-left: 1.5rem;
+  }
+
+  .pillar-title {
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .pillar-body {
+    font-size: 0.88rem;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  /* ─── CONTACT PAGE ─── */
+  .contact-section {
+    padding: 140px 0 100px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .contact-info-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+  }
+
+  .contact-info-sub {
+    color: var(--text2);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-direct {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--yellow);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .contact-direct-title {
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-direct-body {
+    font-size: 0.88rem;
+    color: var(--text2);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ─── FORM ─── */
+  .contact-form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text2);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: var(--text3); }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px rgba(245,197,24,0.08);
+  }
+
+  .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7580' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px;
+    cursor: pointer;
+  }
+
+  .form-select option { background: var(--bg2); }
+
+  .form-textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .form-success.show { display: block; }
+
+  .success-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .success-title {
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .success-body { color: var(--text2); font-size: 0.9rem; }
+
+  /* ─── HOW IT WORKS PAGE ─── */
+  .hiw-hero {
+    padding: 140px 0 80px;
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hiw-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(245,197,24,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hiw-steps-full {
+    padding: 80px 0;
+  }
+
+  .hiw-step-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    padding: 3rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+    transition: border-color var(--transition), transform var(--transition);
+    align-items: center;
+  }
+
+  .hiw-step-card:hover {
+    border-color: var(--border2);
+    transform: translateX(4px);
+  }
+
+  .hiw-step-num {
+    width: 72px;
+    height: 72px;
+    background: var(--yellow-glow2);
+    border: 1.5px solid rgba(245,197,24,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--yellow);
+    flex-shrink: 0;
+  }
+
+  .hiw-step-content {}
+  .hiw-step-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.4rem; }
+  .hiw-step-title { font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+  .hiw-step-body { font-size: 0.93rem; color: var(--text2); line-height: 1.7; }
+
+  /* ─── PRICING PAGE ─── */
+  .pricing-hero {
+    padding: 140px 0 60px;
+    text-align: center;
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(245,197,24,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ─── ANIMATIONS ON SCROLL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .pain-grid,
+    .solution-grid,
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .steps-wrapper {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .steps-line { display: none; }
+
+    .reactivation-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .react-stat { min-width: unset; }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-inner > :first-child {
+      grid-column: 1 / -1;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-pillars {
+      grid-template-columns: 1fr;
+    }
+
+    .hiw-step-card {
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 70px 0; }
+
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+
+    .hero-ctas { flex-direction: column; }
+    .hero-ctas .btn { width: 100%; justify-content: center; }
+
+    .steps-wrapper { grid-template-columns: 1fr; }
+
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat-item:last-child { border-bottom: none; }
+
+    .footer-inner { grid-template-columns: 1fr; }
+
+    .reactivation-inner { padding: 2rem; }
+
+    .pricing-grid { grid-template-columns: 1fr; }
+
+    .hero-demo-box { display: none; }
+
+    .contact-form { padding: 1.75rem; }
+
+    .hiw-step-card {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hiw-step-num { margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home')">Solar<span>Booked</span></a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('hiw')">How It Works</a></li>
+      <li><a href="#" onclick="showPage('pricing')">Pricing</a></li>
+      <li><a href="#" onclick="showPage('about')">About</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+    <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary nav-cta">Book $99 Demo →</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="showPage('home');closeMobile()">Home</a>
+  <a href="#" onclick="showPage('hiw');closeMobile()">How It Works</a>
+  <a href="#" onclick="showPage('pricing');closeMobile()">Pricing</a>
+  <a href="#" onclick="showPage('about');closeMobile()">About</a>
+  <a href="#" onclick="showPage('contact');closeMobile()">Contact</a>
+  <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary" style="text-align:center;justify-content:center;">Book $99 Demo →</a>
+</div>
+
+<!-- ════════════════════════════════════════
+     HOME PAGE
+════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>AI Voice Automation for Solar Companies</span>
+      </div>
+      <h1 class="hero-headline">Your Solar Leads Get a <span class="accent">Phone Call in 60 Seconds</span> — Automatically</h1>
+      <p class="hero-sub">Most solar companies lose 78% of their leads because nobody follows up fast enough. SolarBooked builds AI voice systems that call your leads instantly, qualify them in 5 minutes, and book appointments into your calendar — without your team lifting a finger.</p>
+      <div class="hero-ctas">
+        <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary">See a Live Demo — Book Free Call →</a>
+        <a href="#" onclick="showPage('hiw')" class="btn btn-secondary">Watch How It Works →</a>
+      </div>
+      <p class="trust-line">No contracts. No setup risk. Cancel anytime.</p>
+      <div class="hero-demo-box">
+        <div class="demo-play-icon"></div>
+        <p class="demo-label">Demo Video Coming Soon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">60s</div>
+          <div class="stat-label">Lead Response Time</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">78%</div>
+          <div class="stat-label">Leads Never Get Follow-Up</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100×</div>
+          <div class="stat-label">Higher Conversion Under 5 Min</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">The Problem</span>
+        <h2 class="section-title">Your Leads Are Going Cold Right Now</h2>
+        <p class="section-body">You're spending money on ads, generating inbound leads, and building a pipeline. But here's what's actually happening:</p>
+        <div class="problem-callout">
+          A lead fills your form at 9pm on a Tuesday. Nobody calls them back until Wednesday morning. By then they've already talked to your competitor.
+        </div>
+        <p class="section-body">Industry data shows that responding to a lead within 5 minutes makes you 100x more likely to convert them than responding after 30 minutes. Most solar companies respond in hours — or not at all.<br><br>The result: 78% of solar leads never get proper follow-up. That's not a sales problem. That's a speed problem.</p>
+      </div>
+      <div class="pain-grid reveal">
+        <div class="pain-card">
+          <span class="pain-icon">⏱</span>
+          <h3 class="pain-title">Slow Response Time</h3>
+          <p class="pain-body">Your team can't call every lead within 60 seconds. Nobody can. So leads go cold while your competitors answer first.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-icon">📋</span>
+          <h3 class="pain-title">Dead Leads Sitting in Your CRM</h3>
+          <p class="pain-body">You have hundreds of old leads who showed interest but never booked. They're not dead — they're just waiting for someone to follow up.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-icon">📵</span>
+          <h3 class="pain-title">After-Hours Leads Lost Forever</h3>
+          <p class="pain-body">Leads come in at nights and weekends. Your team isn't there. Those leads disappear and the ad spend that generated them is wasted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">The Solution</span>
+        <h2 class="section-title">AI That Calls Your Leads Before Your Competitor Does</h2>
+        <p class="section-body">SolarBooked builds a done-for-you AI voice system that works 24/7 — calling your leads within 60 seconds of form submission, qualifying them through a natural phone conversation, and booking them straight into your calendar.<br><br>Not a chatbot. Not an SMS. An actual phone call — in your company's voice, with your qualifying questions, running automatically while your team focuses on closing.</p>
+      </div>
+      <div class="solution-grid">
+        <div class="solution-card reveal">
+          <span class="sol-icon">📞</span>
+          <h3 class="sol-title">Real Phone Calls — Not Texts</h3>
+          <p class="sol-body">Solar prospects are typically 40+ years old and prefer phone calls. Our AI makes real calls with natural conversation — not robotic scripts.</p>
+        </div>
+        <div class="solution-card reveal">
+          <span class="sol-icon">⚡</span>
+          <h3 class="sol-title">60-Second Response Time</h3>
+          <p class="sol-body">The moment a lead fills your form, our system calls them. Day or night. Weekend or holiday. Nobody falls through the cracks.</p>
+        </div>
+        <div class="solution-card reveal">
+          <span class="sol-icon">📅</span>
+          <h3 class="sol-title">Automatic Appointment Booking</h3>
+          <p class="sol-body">Qualified leads get booked directly into your calendar. Your team only talks to people who are already interested and pre-qualified.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (summary) -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-label">Process</span>
+        <h2 class="section-title">How SolarBooked Works</h2>
+      </div>
+      <div class="steps-wrapper reveal">
+        <div class="steps-line"></div>
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <p class="step-label">Step 01</p>
+          <h4 class="step-title">Lead Fills Your Form</h4>
+          <p class="step-body">A prospect fills out your contact form, clicks your ad, or requests information on your website.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <p class="step-label">Step 02</p>
+          <h4 class="step-title">AI Calls Within 60 Seconds</h4>
+          <p class="step-body">Our voice AI system calls them immediately — introducing your company and starting a natural qualification conversation.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <p class="step-label">Step 03</p>
+          <h4 class="step-title">Lead Gets Qualified</h4>
+          <p class="step-body">The AI asks your key qualifying questions — homeowner status, electricity bill, interest level, timeline — and handles basic objections naturally.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <p class="step-label">Step 04</p>
+          <h4 class="step-title">Appointment Booked Automatically</h4>
+          <p class="step-body">Qualified leads get booked straight into your sales calendar. Your team gets a notification with lead details and shows up to close.</p>
+        </div>
+      </div>
+      <div class="hiw-cta reveal">
+        <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-outline-yellow">See This Working Live → Book a Free Demo Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD REACTIVATION -->
+  <section id="reactivation">
+    <div class="container">
+      <div class="reactivation-inner reveal">
+        <div>
+          <span class="section-label">Lead Reactivation</span>
+          <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1.2rem;">You're Also Sitting on a Gold Mine You Don't Know About</h2>
+          <p class="section-body">Every solar company has hundreds — sometimes thousands — of old leads sitting in their CRM. People who filled out a form 6 months ago. Requested a quote and went quiet. Showed interest but never booked.</p>
+          <br>
+          <p class="section-body">Those leads already know your brand. They already raised their hand once. They just need someone to follow up.</p>
+          <br>
+          <p class="section-body">SolarBooked's lead reactivation system calls your dead leads automatically, asks why they didn't move forward, handles objections, and rebooks the interested ones — turning forgotten leads back into booked appointments without spending a dollar on new ads.</p>
+        </div>
+        <div class="react-stat">
+          <div class="react-stat-num">30%</div>
+          <p class="react-stat-label">of dead leads can be reactivated with the right follow-up system</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING (summary) -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <p class="pricing-tier">Tier 1</p>
+          <h3 class="pricing-name">Demo Call</h3>
+          <div class="pricing-price">$99</div>
+          <p class="pricing-price-note">one-time</p>
+          <div class="pricing-divider"></div>
+          <p class="pricing-desc">See the system working live with your actual lead scenarios. We build a custom demo call using your qualifying questions and show you exactly how it works for your business. If you don't want to move forward after seeing it — no problem.</p>
+          <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-outline-yellow" style="width:100%;justify-content:center;">Start With a $99 Demo →</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <span class="pricing-tag">Most Popular</span>
+          <p class="pricing-tier">Tier 2</p>
+          <h3 class="pricing-name">Full Setup</h3>
+          <div class="pricing-price">$500</div>
+          <p class="pricing-price-note">one-time + up to $800/month</p>
+          <div class="pricing-divider"></div>
+          <p class="pricing-desc">Complete done-for-you setup. We build your voice AI system, connect it to your lead sources and calendar, write your qualification script, and test everything end to end.</p>
+          <ul class="pricing-features">
+            <li>Custom AI voice script for your brand</li>
+            <li>Lead source integration (website form, Facebook ads, etc.)</li>
+            <li>Calendar booking automation</li>
+            <li>CRM integration</li>
+            <li>Call recording and reporting dashboard</li>
+            <li>Lead reactivation campaign setup</li>
+            <li>Ongoing optimization and support</li>
+          </ul>
+          <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a>
+        </div>
+        <div class="pricing-card reveal">
+          <p class="pricing-tier">How to Start</p>
+          <h3 class="pricing-name">Not Sure Yet?</h3>
+          <div style="padding: 1.5rem 0;">
+            <p class="pricing-desc" style="margin-bottom:1.5rem;">Start with the $99 demo. See the AI calling a live lead scenario built for your company. No commitment. No pressure. Just proof that the system works.</p>
+            <p class="pricing-desc">After the demo, you'll know exactly whether this is right for your business — and we'll know exactly how to build it for you if it is.</p>
+          </div>
+          <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;">Book a Demo Call →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Answers to Questions You're Probably Thinking</h2>
+      </div>
+      <div class="faq-grid reveal">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Will it sound robotic?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Modern voice AI sounds remarkably natural. Your prospects won't know they're talking to AI unless you tell them — and many companies choose to be transparent about it, which actually builds trust.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What if leads don't answer?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">The system automatically follows up — calling again on Day 2, Day 5, and Day 14 with a different approach each time. Most leads convert within 3 follow-up attempts.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Does it work with my existing CRM?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Yes. We integrate with most major CRMs including HubSpot, Salesforce, GoHighLevel, and others. If you use something else we'll confirm compatibility before setup.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How long does setup take?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Typically 3-5 business days from payment to your system going live.</div>
+        </div>
+        <div class="faq-item" style="grid-column: 1 / -1;">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What if I already have a sales team?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">The AI doesn't replace your sales team — it enhances them. Your team stops wasting time chasing cold leads and only talks to pre-qualified prospects who are ready to have a real conversation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="container final-cta-inner">
+      <div class="reveal">
+        <span class="section-label">Get Started</span>
+        <h2 class="final-cta-title">Your Leads Are Calling.<br>Are You Answering?</h2>
+        <p class="final-cta-body">Every hour you wait is another lead going cold. Another competitor answering first. Another appointment that should have been yours.<br><br>Start with a $99 demo call — see the system working with your actual lead scenarios before committing to anything. If it's not right for your business, you've spent $99 to find out. If it is — you've found the system that books your calendar while you sleep.</p>
+        <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary" style="font-size:1.05rem; padding: 18px 36px;">Book Your $99 Demo Call Now →</a>
+        <p class="final-cta-note">Questions first? Email us at <a href="mailto:umair@solarbooked.com">umair@solarbooked.com</a></p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ════════════════════════════════════════
+     HOW IT WORKS PAGE
+════════════════════════════════════════ -->
+<div id="page-hiw" class="page">
+
+  <section class="hiw-hero">
+    <div class="container">
+      <span class="section-label">Process</span>
+      <h1 class="about-headline">How SolarBooked Works</h1>
+      <p class="about-body">A done-for-you system that turns form submissions into booked appointments — automatically, 24/7, in your company's voice.</p>
+    </div>
+  </section>
+
+  <section class="hiw-steps-full">
+    <div class="container">
+      <div class="hiw-step-card reveal">
+        <div class="hiw-step-num">1</div>
+        <div class="hiw-step-content">
+          <p class="hiw-step-label">Step 01</p>
+          <h3 class="hiw-step-title">Lead Fills Your Form</h3>
+          <p class="hiw-step-body">A prospect fills out your contact form, clicks your ad, or requests information on your website. The moment this happens, a webhook fires and our automation engine activates in real time.</p>
+        </div>
+      </div>
+      <div class="hiw-step-card reveal">
+        <div class="hiw-step-num">2</div>
+        <div class="hiw-step-content">
+          <p class="hiw-step-label">Step 02</p>
+          <h3 class="hiw-step-title">AI Calls Within 60 Seconds</h3>
+          <p class="hiw-step-body">Our voice AI system calls them immediately — introducing your company and starting a natural qualification conversation. Not a robotic script. Not an SMS. A real phone call with a natural-sounding voice, day or night, weekend or holiday.</p>
+        </div>
+      </div>
+      <div class="hiw-step-card reveal">
+        <div class="hiw-step-num">3</div>
+        <div class="hiw-step-content">
+          <p class="hiw-step-label">Step 03</p>
+          <h3 class="hiw-step-title">Lead Gets Qualified</h3>
+          <p class="hiw-step-body">The AI asks your key qualifying questions — homeowner status, electricity bill size, interest level, timeline — and handles basic objections naturally. Only qualified prospects move to the next step. Everyone else gets logged and followed up with automatically.</p>
+        </div>
+      </div>
+      <div class="hiw-step-card reveal">
+        <div class="hiw-step-num">4</div>
+        <div class="hiw-step-content">
+          <p class="hiw-step-label">Step 04</p>
+          <h3 class="hiw-step-title">Appointment Booked Automatically</h3>
+          <p class="hiw-step-body">Qualified leads get booked straight into your sales calendar via Cal.com. Your team gets a notification with the lead details — name, phone, answers to qualifying questions — and shows up ready to close. No manual scheduling. No back-and-forth.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 3rem; text-align: center;">
+      <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary">See This Working Live — Book a Free Demo →</a>
+    </div>
+  </section>
+
+</div><!-- /page-hiw -->
+
+
+<!-- ════════════════════════════════════════
+     PRICING PAGE
+════════════════════════════════════════ -->
+<div id="page-pricing" class="page">
+
+  <section class="pricing-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="section-label">Pricing</span>
+      <h1 class="section-title" style="text-align:center;max-width:600px;margin:0 auto 1rem;">Simple, Transparent Pricing</h1>
+      <p style="text-align:center; color: var(--text2); max-width: 480px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">Start with a $99 demo and see the system work before committing to anything.</p>
+    </div>
+  </section>
+
+  <section style="padding: 80px 0;">
+    <div class="container">
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <p class="pricing-tier">Tier 1</p>
+          <h3 class="pricing-name">Demo Call</h3>
+          <div class="pricing-price">$99</div>
+          <p class="pricing-price-note">one-time</p>
+          <div class="pricing-divider"></div>
+          <p class="pricing-desc">See the system working live with your actual lead scenarios. We build a custom demo call using your qualifying questions and show you exactly how it works for your business. If you don't want to move forward after seeing it — no problem.</p>
+          <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-outline-yellow" style="width:100%;justify-content:center;">Start With a $99 Demo →</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <span class="pricing-tag">Most Popular</span>
+          <p class="pricing-tier">Tier 2</p>
+          <h3 class="pricing-name">Full Setup</h3>
+          <div class="pricing-price">$500</div>
+          <p class="pricing-price-note">one-time + up to $800/month retainer</p>
+          <div class="pricing-divider"></div>
+          <p class="pricing-desc">Complete done-for-you setup. We build your voice AI system, connect it to your lead sources and calendar, write your qualification script, and test everything end to end. Monthly retainer covers maintenance, optimization, and ongoing support.</p>
+          <ul class="pricing-features">
+            <li>Custom AI voice script for your brand</li>
+            <li>Lead source integration (website form, Facebook ads, etc.)</li>
+            <li>Calendar booking automation</li>
+            <li>CRM integration</li>
+            <li>Call recording and reporting dashboard</li>
+            <li>Lead reactivation campaign setup</li>
+            <li>Ongoing optimization and support</li>
+          </ul>
+          <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a>
+        </div>
+        <div class="pricing-card reveal" style="display:flex;flex-direction:column;">
+          <p class="pricing-tier">How to Start</p>
+          <h3 class="pricing-name">Not Sure Yet?</h3>
+          <div style="flex:1; padding: 1rem 0;">
+            <p class="pricing-desc" style="margin-bottom:1.5rem;">Start with the $99 demo. See the AI calling a live lead scenario built for your company. No commitment. No pressure. Just proof that the system works.</p>
+            <p class="pricing-desc">After the demo, you'll know exactly whether this is right for your business — and we'll know exactly how to build it for you if it is.</p>
+          </div>
+          <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-secondary" style="width:100%;justify-content:center;">Book a Demo Call →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-pricing -->
+
+
+<!-- ════════════════════════════════════════
+     ABOUT PAGE
+════════════════════════════════════════ -->
+<div id="page-about" class="page">
+
+  <section class="about-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="section-label">About</span>
+      <h1 class="about-headline">We Build the System That Calls Your Leads While You Sleep</h1>
+      <p class="about-body">SolarBooked was built to solve one specific problem: solar companies spending thousands on lead generation and losing most of those leads because nobody follows up fast enough.</p>
+      <p class="about-body">We specialize in one thing — building done-for-you AI voice systems for solar companies. We don't do general automation. We don't work with every industry. We focus entirely on solar lead follow-up because that's where we've built our expertise and that's where we deliver results.</p>
+      <p class="about-body">Our systems are built on proven voice AI technology — real phone calls, natural conversations, automatic calendar booking. No chatbots. No SMS blasts. No generic drip emails.</p>
+      <p class="about-body">If you're a solar company generating leads and losing them to slow follow-up — we built SolarBooked for you.</p>
+      <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary">See How It Works → Book a Free Demo</a>
+    </div>
+  </section>
+
+  <section style="padding: 80px 0 100px;">
+    <div class="container">
+      <div class="about-pillars">
+        <div class="pillar reveal">
+          <h4 class="pillar-title">Solar-Specific</h4>
+          <p class="pillar-body">We only work with solar companies. Every script, every integration, every optimization is built around how solar leads think and behave.</p>
+        </div>
+        <div class="pillar reveal">
+          <h4 class="pillar-title">Done For You</h4>
+          <p class="pillar-body">You don't touch any technology. We build it, connect it, test it, and maintain it. You just watch booked appointments appear in your calendar.</p>
+        </div>
+        <div class="pillar reveal">
+          <h4 class="pillar-title">Built on Proven Tech</h4>
+          <p class="pillar-body">Built on Vapi (voice AI), n8n (automation), and Cal.com (booking) — the same infrastructure used by top automation agencies worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-about -->
+
+
+<!-- ════════════════════════════════════════
+     CONTACT PAGE
+════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div>
+          <span class="section-label">Contact</span>
+          <h1 class="contact-info-title">Let's Talk About Your Lead Follow-Up</h1>
+          <p class="contact-info-sub">Have questions before booking a demo? Send us a message and we'll get back to you within 24 hours.</p>
+
+          <div class="contact-direct">
+            <h4 class="contact-direct-title">Ready to skip the form?</h4>
+            <p class="contact-direct-body">Book a call directly and see the demo working with your actual lead scenarios. No commitment required.</p>
+            <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-primary">→ Book a $99 Demo Call</a>
+          </div>
+        </div>
+
+        <div class="contact-form" id="contactFormWrapper">
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name</label>
+              <input class="form-input" type="text" id="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="company">Company Name</label>
+              <input class="form-input" type="text" id="company" placeholder="Sun Valley Solar" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" placeholder="john@sunvalleysolar.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="leads">How many leads do you generate per month?</label>
+              <select class="form-select" id="leads" required>
+                <option value="" disabled selected>Select range</option>
+                <option value="under50">Under 50</option>
+                <option value="50-200">50–200</option>
+                <option value="200-500">200–500</option>
+                <option value="500+">500+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="challenge">What's your biggest lead follow-up challenge?</label>
+              <textarea class="form-textarea" id="challenge" placeholder="Tell us what's happening with your lead follow-up process..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;">Send Message →</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✅</div>
+            <h4 class="success-title">Message Sent!</h4>
+            <p class="success-body">We'll get back to you within 24 hours. In the meantime, feel free to book a demo call directly.</p>
+            <a href="https://cal.com/solarbooked/demo" target="_blank" class="btn btn-outline-yellow" style="margin-top:1.5rem;">Book a $99 Demo →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-contact -->
+
+
+<!-- ─── FOOTER (shared) ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" onclick="showPage('home')">Solar<span>Booked</span></a>
+        <p class="footer-tagline">AI Voice Systems for Solar Companies. Built for solar companies in the US, Canada, and UK.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="#" onclick="showPage('home')">Home</a></li>
+          <li><a href="#" onclick="showPage('hiw')">How It Works</a></li>
+          <li><a href="#" onclick="showPage('pricing')">Pricing</a></li>
+          <li><a href="#" onclick="showPage('about')">About</a></li>
+          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="mailto:umair@solarbooked.com">umair@solarbooked.com</a></li>
+          <li><a href="https://cal.com/solarbooked/demo" target="_blank">Book a Demo Call</a></li>
+        </ul>
+        <p class="footer-col-title" style="margin-top:1.5rem;">Built With</p>
+        <div class="footer-tech">
+          <span class="tech-badge">Vapi</span>
+          <span class="tech-badge">n8n</span>
+          <span class="tech-badge">Cal.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SolarBooked. All rights reserved.</p>
+      <p class="footer-copy">US · Canada · UK</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // ─── PAGE SWITCHING ───
+  function showPage(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + page);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Re-trigger reveal animations
+      setTimeout(() => {
+        observeReveal();
+      }, 100);
+    }
+  }
+
+  // ─── NAVBAR SCROLL ───
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // ─── HAMBURGER ───
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // ─── FAQ TOGGLE ───
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // ─── SCROLL REVEAL ───
+  function observeReveal() {
+    const reveals = document.querySelectorAll('.reveal:not(.visible)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
+  }
+
+  document.addEventListener('DOMContentLoaded', observeReveal);
+
+  // ─── FORM SUBMIT ───
+  function submitForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    form.style.display = 'none';
+    success.classList.add('show');
+  }
+</script>
+
+</body>
+</html>
