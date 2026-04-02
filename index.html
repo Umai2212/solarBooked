@@ -14,7 +14,6 @@
   <meta name="twitter:title" content="SolarBooked — Stop Losing Solar Leads" />
   <meta name="twitter:description" content="AI calls your leads in 60 seconds. Solar follow-up automation that books appointments while you sleep." />
 
-  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -22,17 +21,8 @@
     "name": "SolarBooked",
     "url": "https://solarbooked.com",
     "email": "umair@solarbooked.com",
-    "description": "Done-for-you voice AI systems for solar companies and local service businesses. Automatic lead follow-up, qualification, and appointment booking.",
-    "founder": { "@type": "Person", "name": "Umair Abdulla" },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Voice AI Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Solar Lead Follow-Up Automation" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lead Reactivation" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Receptionist for Local Businesses" } }
-      ]
-    }
+    "description": "Done-for-you voice AI systems for solar companies and local service businesses.",
+    "founder": { "@type": "Person", "name": "Umair Abdulla" }
   }
   </script>
 
@@ -42,9 +32,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* ============================================================
-       DESIGN TOKENS
-    ============================================================ */
     :root {
       --bg-primary:    #0a0c14;
       --bg-secondary:  #111422;
@@ -70,9 +57,6 @@
       --transition:    0.25s cubic-bezier(0.4,0,0.2,1);
     }
 
-    /* ============================================================
-       RESET & BASE
-    ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
@@ -89,21 +73,11 @@
     ul { list-style: none; }
     section { padding: 100px 0; position: relative; }
 
-    /* ============================================================
-       LAYOUT
-    ============================================================ */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 
-    /* ============================================================
-       BACKGROUND TEXTURE
-    ============================================================ */
     body::before {
       content: '';
       position: fixed;
@@ -117,9 +91,6 @@
     }
     .section-wrap { position: relative; z-index: 1; }
 
-    /* ============================================================
-       TYPOGRAPHY
-    ============================================================ */
     h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; }
     h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; }
     h2 { font-size: clamp(1.9rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; }
@@ -142,9 +113,6 @@
     .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
     .highlight { color: var(--accent); }
 
-    /* ============================================================
-       BUTTONS
-    ============================================================ */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -157,38 +125,15 @@
       transition: var(--transition);
       white-space: nowrap;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #0a0c14;
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 30px var(--accent-glow);
-    }
-    .btn-secondary {
-      background: transparent;
-      border: 1.5px solid var(--accent);
-      color: var(--accent);
-    }
-    .btn-secondary:hover {
-      background: var(--accent-dim);
-      transform: translateY(-1px);
-    }
-    .btn-danger {
-      background: var(--danger);
-      color: #fff;
-    }
-    .btn-danger:hover { background: #dc2626; transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #0a0c14; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 30px var(--accent-glow); }
+    .btn-secondary { background: transparent; border: 1.5px solid var(--accent); color: var(--accent); }
+    .btn-secondary:hover { background: var(--accent-dim); transform: translateY(-1px); }
     .btn-lg { padding: 16px 36px; font-size: 1rem; }
     .btn-sm { padding: 10px 20px; font-size: 0.85rem; }
 
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
     .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       z-index: 1000;
       background: rgba(10,12,20,0.95);
       backdrop-filter: blur(16px);
@@ -198,157 +143,68 @@
       align-items: center;
     }
     .nav-inner {
-      width: 100%;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.03em;
     }
     .nav-logo .logo-icon {
-      width: 32px; height: 32px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0a0c14;
-      font-size: 0.9rem;
+      width: 32px; height: 32px; background: var(--accent); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; color: #0a0c14; font-size: 0.9rem;
     }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
     .nav-links a {
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: var(--transition);
-      position: relative;
+      padding: 8px 14px; border-radius: 6px; font-size: 0.88rem; font-weight: 500;
+      color: var(--text-secondary); transition: var(--transition);
     }
     .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
-    .nav-links a.active {
-      color: var(--accent);
-      background: var(--accent-dim);
-    }
+    .nav-links a.active { color: var(--accent); background: var(--accent-dim); }
     .nav-cta { margin-left: 12px; }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      padding: 6px;
-    }
-    .hamburger span {
-      width: 22px; height: 2px;
-      background: var(--text-primary);
-      border-radius: 2px;
-      transition: var(--transition);
-      display: block;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 6px; }
+    .hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: var(--transition); display: block; }
     .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 68px; left: 0; right: 0;
-      background: rgba(10,12,20,0.98);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px 24px;
-      z-index: 999;
-      flex-direction: column;
-      gap: 4px;
+      display: none; position: fixed; top: 68px; left: 0; right: 0;
+      background: rgba(10,12,20,0.98); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); padding: 16px 24px 24px;
+      z-index: 999; flex-direction: column; gap: 4px;
     }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: var(--transition);
-    }
-    .mobile-menu a:hover, .mobile-menu a.active {
-      color: var(--accent);
-      background: var(--accent-dim);
-    }
+    .mobile-menu a { padding: 12px 16px; border-radius: 8px; font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); transition: var(--transition); }
+    .mobile-menu a:hover, .mobile-menu a.active { color: var(--accent); background: var(--accent-dim); }
     .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 8px; }
 
-    /* ============================================================
-       PAGE SECTIONS — SHOW/HIDE
-    ============================================================ */
     .page { display: none; }
     .page.active { display: block; }
-
-    /* ============================================================
-       MAIN CONTENT OFFSET
-    ============================================================ */
     .main-content { padding-top: 68px; }
 
-    /* ============================================================
-       HERO SECTION
-    ============================================================ */
+    /* HERO */
     .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 0 60px;
-      position: relative;
-      overflow: hidden;
+      min-height: 90vh; display: flex; align-items: center;
+      padding: 80px 0 60px; position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px; right: -200px;
+      content: ''; position: absolute; top: -200px; right: -200px;
       width: 700px; height: 700px;
       background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; left: -100px;
+      content: ''; position: absolute; bottom: -100px; left: -100px;
       width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(245,158,11,0.04) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 60% 40%;
-      gap: 60px;
-      align-items: center;
-    }
+    .hero-grid { display: grid; grid-template-columns: 60% 40%; gap: 60px; align-items: center; }
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-dim);
-      border: 1px solid var(--border-accent);
-      padding: 6px 14px;
-      border-radius: 50px;
-      margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-dim); border: 1px solid var(--border-accent);
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 28px;
     }
     .hero-tag .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
       animation: pulse 2s ease-in-out infinite;
     }
     @keyframes pulse {
@@ -356,317 +212,146 @@
       50% { opacity: 0.5; transform: scale(0.8); }
     }
     .hero-headline { margin-bottom: 24px; }
-    .hero-headline .line-danger {
-      display: block;
-      color: var(--text-secondary);
-      font-size: 0.95em;
-    }
+    .hero-headline .line-danger { display: block; color: var(--text-secondary); font-size: 0.95em; }
     .hero-headline .line-accent { color: var(--accent); }
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      margin-bottom: 36px;
-      max-width: 540px;
-    }
-    .hero-bullets {
-      margin-bottom: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .hero-bullet {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-      color: var(--text-primary);
-    }
+    .hero-sub { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 36px; max-width: 540px; }
+    .hero-bullets { margin-bottom: 40px; display: flex; flex-direction: column; gap: 12px; }
+    .hero-bullet { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--text-primary); }
     .hero-bullet .bullet-icon {
-      width: 20px; height: 20px;
-      min-width: 20px;
-      background: var(--accent-dim);
-      border: 1px solid var(--border-accent);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 0.6rem;
-      margin-top: 3px;
+      width: 20px; height: 20px; min-width: 20px;
+      background: var(--accent-dim); border: 1px solid var(--border-accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 0.6rem; margin-top: 3px;
     }
-    .hero-cta-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-    .hero-trust {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
+    .hero-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .hero-trust { font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .hero-trust .dot { color: var(--border); }
 
-    /* Video Box */
+    /* VIDEO BOX */
     .video-box {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      position: relative;
+      background: var(--bg-secondary); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden; position: relative;
     }
-    .video-inner {
-      aspect-ratio: 16/9;
-      background: var(--bg-card);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      cursor: pointer;
-      position: relative;
-      transition: var(--transition);
+    .video-thumbnail {
+      aspect-ratio: 16/9; background: var(--bg-card);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; cursor: pointer; position: relative; transition: var(--transition);
     }
-    .video-inner:hover { background: var(--bg-card-hover); }
-    .video-inner:hover .play-btn { transform: scale(1.08); }
+    .video-thumbnail:hover { background: var(--bg-card-hover); }
+    .video-thumbnail:hover .play-btn { transform: scale(1.08); }
     .video-overlay-label {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      padding: 14px 20px;
+      position: absolute; top: 0; left: 0; right: 0; padding: 14px 20px;
       background: linear-gradient(to bottom, rgba(10,12,20,0.9), transparent);
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
+      font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent);
     }
     .play-btn {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0a0c14;
-      font-size: 1.2rem;
-      transition: var(--transition);
+      width: 64px; height: 64px; border-radius: 50%; background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      color: #0a0c14; font-size: 1.2rem; transition: var(--transition);
       box-shadow: 0 0 40px var(--accent-glow);
     }
-    .video-inner p { font-size: 0.85rem; color: var(--text-muted); }
+    .video-thumbnail p { font-size: 0.85rem; color: var(--text-muted); }
     .video-caption {
-      padding: 14px 20px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      padding: 14px 20px; font-size: 0.8rem; color: var(--text-muted);
+      border-top: 1px solid var(--border); display: flex; align-items: center; gap: 8px;
     }
-    /* REPLACE: Video URL — AI video of Umair speaking 30 seconds about what SolarBooked does */
+    #heroVideo { display: none; width: 100%; aspect-ratio: 16/9; background: #000; }
 
-    /* ============================================================
-       LEAD REACTIVATION TEASER
-    ============================================================ */
+    /* REACT TEASER */
     .react-teaser {
       background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(245,158,11,0.04) 100%);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     }
-    .react-teaser .teaser-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
+    .react-teaser .teaser-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .react-stat-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-accent);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      background: var(--bg-card); border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg); padding: 40px; text-align: center;
+      position: relative; overflow: hidden;
     }
     .react-stat-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
     }
-    .react-stat-num {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
+    .react-stat-num { font-family: var(--font-display); font-size: 4rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
     .react-stat-label { font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px; }
     .react-stat-source { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
 
-    /* ============================================================
-       STATS SECTION
-    ============================================================ */
+    /* STATS */
     .stats-section { background: var(--bg-secondary); }
     .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 32px;
-      transition: var(--transition);
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 32px; transition: var(--transition);
     }
     .stat-card:hover { transform: translateY(-4px); border-color: var(--border-accent); background: var(--bg-card-hover); }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 2.6rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
+    .stat-num { font-family: var(--font-display); font-size: 2.6rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
     .stat-label { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 6px; }
     .stat-desc { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 10px; }
     .stat-source { font-size: 0.72rem; color: var(--text-muted); }
 
-    /* ============================================================
-       SERVICE CARDS
-    ============================================================ */
+    /* SERVICE CARDS */
     .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 36px; transition: var(--transition); display: flex; flex-direction: column; gap: 16px;
+      position: relative; overflow: hidden;
     }
     .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transition: var(--transition);
-      transform-origin: left;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent); transform: scaleX(0); transition: var(--transition); transform-origin: left;
     }
     .service-card:hover::before { transform: scaleX(1); }
     .service-card:hover { transform: translateY(-4px); border-color: var(--border-accent); }
     .service-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      background: var(--accent-dim);
-      border: 1px solid var(--border-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.1rem;
+      width: 48px; height: 48px; border-radius: 12px; background: var(--accent-dim);
+      border: 1px solid var(--border-accent); display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1.1rem;
     }
     .service-card h3 { font-size: 1.15rem; }
     .service-problem { font-size: 0.9rem; color: var(--danger); display: flex; gap: 8px; }
     .service-solution { font-size: 0.9rem; color: var(--success); display: flex; gap: 8px; }
     .service-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--accent);
-      font-size: 0.88rem;
-      font-weight: 600;
-      margin-top: auto;
-      transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 6px; color: var(--accent);
+      font-size: 0.88rem; font-weight: 600; margin-top: auto; transition: var(--transition);
     }
     .service-link:hover { gap: 10px; }
 
-    /* ============================================================
-       HOW IT WORKS
-    ============================================================ */
+    /* HOW IT WORKS */
     .how-section { background: var(--bg-card); }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
     .steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 32px; left: 12.5%; right: 12.5%;
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent), transparent, var(--accent));
-      opacity: 0.4;
+      content: ''; position: absolute; top: 32px; left: 12.5%; right: 12.5%; height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent, var(--accent)); opacity: 0.4;
     }
     .step-item { padding: 32px 24px; text-align: center; position: relative; }
     .step-num {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--bg-secondary);
-      border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--accent);
-      margin: 0 auto 20px;
-      position: relative;
-      z-index: 1;
+      width: 64px; height: 64px; border-radius: 50%; background: var(--bg-secondary);
+      border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--accent);
+      margin: 0 auto 20px; position: relative; z-index: 1;
     }
     .step-title { font-size: 1rem; font-weight: 600; margin-bottom: 10px; }
     .step-desc { font-size: 0.875rem; color: var(--text-secondary); }
 
-    /* ============================================================
-       SOCIAL PROOF / PROOF SECTION
-    ============================================================ */
-    .proof-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
+    /* PROOF */
+    .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
     .proof-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      transition: var(--transition);
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px; transition: var(--transition);
     }
     .proof-card:hover { border-color: var(--border-accent); }
     .proof-card.full-width { grid-column: 1 / -1; }
     .proof-card h3 { margin-bottom: 16px; font-size: 1.05rem; }
 
-    /* Audio Player */
+    /* AUDIO PLAYER */
     .audio-player-custom {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 16px 0;
+      background: var(--bg-secondary); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px; display: flex; align-items: center; gap: 16px; margin: 16px 0;
     }
     .audio-play-btn {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: none;
-      color: #0a0c14;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: var(--transition);
+      width: 44px; height: 44px; border-radius: 50%; background: var(--accent);
+      border: none; color: #0a0c14; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0; transition: var(--transition);
     }
     .audio-play-btn:hover { background: var(--accent-hover); transform: scale(1.05); }
     .audio-track-info { flex: 1; }
@@ -674,127 +359,69 @@
     .audio-progress { height: 4px; background: var(--border); border-radius: 2px; cursor: pointer; }
     .audio-progress-bar { height: 100%; width: 0%; background: var(--accent); border-radius: 2px; transition: width 0.1s linear; }
     .audio-time { font-size: 0.75rem; color: var(--text-muted); margin-top: 6px; }
-    /* REPLACE: Audio URL — call recording of AI qualifying solar lead */
 
-    /* Screenshots */
+    /* SCREENSHOTS */
     .screenshot-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 16px; }
     .screenshot-placeholder {
-      aspect-ratio: 16/10;
-      background: var(--bg-secondary);
-      border: 1px dashed var(--border);
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 16px;
+      aspect-ratio: 16/10; background: var(--bg-secondary);
+      border: 1px dashed var(--border); border-radius: 10px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 8px; color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 16px;
     }
     .screenshot-placeholder i { font-size: 1.5rem; color: var(--border); }
-    /* REPLACE: Screenshot — n8n workflow */
-    /* REPLACE: Screenshot — Cal.com booking */
-    /* REPLACE: Screenshot — Google Sheets data */
 
-    /* Industry stat box */
+    /* INDUSTRY PROOF */
     .industry-proof {
       background: linear-gradient(135deg, rgba(245,158,11,0.06), transparent);
-      border: 1px solid var(--border-accent);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
+      border: 1px solid var(--border-accent); border-radius: var(--radius);
+      padding: 28px 32px; display: flex; gap: 20px; align-items: flex-start;
     }
     .industry-proof .icon-wrap {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      background: var(--accent-dim);
+      width: 44px; height: 44px; border-radius: 10px; background: var(--accent-dim);
       display: flex; align-items: center; justify-content: center;
-      color: var(--accent);
-      font-size: 1.2rem;
-      flex-shrink: 0;
+      color: var(--accent); font-size: 1.2rem; flex-shrink: 0;
     }
 
-    /* ============================================================
-       URGENCY SECTION
-    ============================================================ */
+    /* URGENCY */
     .urgency-section { background: var(--bg-secondary); }
     .urgency-box {
-      background: var(--danger-dim);
-      border: 1px solid rgba(239,68,68,0.3);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      margin-bottom: 32px;
+      background: var(--danger-dim); border: 1px solid rgba(239,68,68,0.3);
+      border-radius: var(--radius-lg); padding: 36px; margin-bottom: 32px;
     }
     .urgency-box h3 { color: #fca5a5; margin-bottom: 12px; }
     .urgency-box p { color: var(--text-secondary); }
 
-    /* Lead Decay Visual */
+    /* DECAY BARS */
     .decay-visual {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px;
     }
     .decay-visual h3 { margin-bottom: 24px; }
     .decay-bars { display: flex; flex-direction: column; gap: 12px; }
-    .decay-row {
-      display: grid;
-      grid-template-columns: 110px 1fr 60px;
-      align-items: center;
-      gap: 16px;
-    }
+    .decay-row { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 16px; }
     .decay-label { font-size: 0.85rem; color: var(--text-secondary); }
     .decay-bar-wrap { background: var(--bg-secondary); border-radius: 4px; height: 20px; overflow: hidden; }
     .decay-bar {
-      height: 100%;
-      border-radius: 4px;
-      width: 0%;
+      height: 100%; border-radius: 4px; width: 0%;
       transition: width 1.5s cubic-bezier(0.4,0,0.2,1);
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 8px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #0a0c14;
+      display: flex; align-items: center; justify-content: flex-end;
+      padding-right: 8px; font-size: 0.72rem; font-weight: 700; color: #0a0c14;
     }
     .decay-pct { font-size: 0.88rem; font-weight: 700; color: var(--text-primary); text-align: right; }
 
-    /* ============================================================
-       PRICING SECTION
-    ============================================================ */
+    /* PRICING */
     .pricing-section { background: var(--bg-primary); }
     .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 860px; margin: 0 auto; }
     .pricing-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      position: relative;
-      transition: var(--transition);
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px; position: relative; transition: var(--transition);
     }
     .pricing-card:hover { transform: translateY(-4px); }
-    .pricing-card.featured {
-      border-color: var(--accent);
-      background: linear-gradient(145deg, var(--bg-card), rgba(245,158,11,0.04));
-    }
+    .pricing-card.featured { border-color: var(--accent); background: linear-gradient(145deg, var(--bg-card), rgba(245,158,11,0.04)); }
     .pricing-badge {
-      position: absolute;
-      top: -14px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: #0a0c14;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 16px;
-      border-radius: 50px;
-      white-space: nowrap;
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: #0a0c14; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 16px; border-radius: 50px; white-space: nowrap;
     }
     .pricing-name { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px; }
     .pricing-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px; }
@@ -802,116 +429,50 @@
     .pricing-price .period { color: var(--text-muted); font-size: 0.9rem; }
     .pricing-subtitle { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 24px; }
     .pricing-features { margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
-    .pricing-feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
+    .pricing-feature { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--text-secondary); }
     .pricing-feature i { color: var(--success); margin-top: 3px; font-size: 0.8rem; }
     .pricing-note {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 16px;
+      background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;
+      padding: 16px; font-size: 0.8rem; color: var(--text-muted); margin-top: 16px;
     }
     .pricing-note strong { color: var(--text-secondary); }
     .pricing-explain {
-      max-width: 720px;
-      margin: 48px auto 0;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
+      max-width: 720px; margin: 48px auto 0; background: var(--bg-secondary);
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75;
     }
     .pricing-explain strong { color: var(--text-primary); }
 
-    /* ============================================================
-       FAQ SECTION
-    ============================================================ */
+    /* FAQ */
     .faq-section { background: var(--bg-secondary); }
     .faq-list { max-width: 820px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-question {
-      width: 100%;
-      background: none;
-      text-align: left;
-      padding: 22px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      color: var(--text-primary);
-      font-size: 0.975rem;
-      font-weight: 600;
-      font-family: var(--font-body);
-      cursor: pointer;
-      transition: color var(--transition);
+      width: 100%; background: none; text-align: left; padding: 22px 0;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      color: var(--text-primary); font-size: 0.975rem; font-weight: 600;
+      font-family: var(--font-body); cursor: pointer; transition: color var(--transition);
     }
     .faq-question:hover { color: var(--accent); }
     .faq-chevron {
-      width: 28px; height: 28px;
-      border-radius: 6px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: transform var(--transition);
-      color: var(--text-muted);
-      font-size: 0.75rem;
+      width: 28px; height: 28px; border-radius: 6px; background: var(--bg-secondary);
+      border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform var(--transition); color: var(--text-muted); font-size: 0.75rem;
     }
     .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--accent); }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-    .faq-answer-inner {
-      padding: 0 0 22px;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-    }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-answer-inner { padding: 0 0 22px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
 
-    /* ============================================================
-       FINAL CTA SECTION
-    ============================================================ */
-    .final-cta {
-      background: var(--bg-primary);
-      text-align: center;
-      padding: 120px 0;
-    }
-    .final-cta-box {
-      max-width: 680px;
-      margin: 0 auto;
-    }
+    /* FINAL CTA */
+    .final-cta { background: var(--bg-primary); text-align: center; padding: 120px 0; }
+    .final-cta-box { max-width: 680px; margin: 0 auto; }
     .final-cta h2 { margin-bottom: 16px; }
     .final-cta p { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 40px; }
     .final-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    footer {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      padding: 60px 0 32px;
-    }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
+    /* FOOTER */
+    footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 60px 0 32px; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-brand .nav-logo { margin-bottom: 16px; }
     .footer-tagline { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; max-width: 280px; }
     .footer-email a { color: var(--accent); font-size: 0.9rem; }
@@ -921,165 +482,127 @@
     .footer-col ul li a:hover { color: var(--accent); }
     .footer-cta-box {
       background: linear-gradient(135deg, rgba(245,158,11,0.08), transparent);
-      border: 1px solid var(--border-accent);
-      border-radius: var(--radius);
-      padding: 28px;
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+      border: 1px solid var(--border-accent); border-radius: var(--radius);
+      padding: 28px; margin-bottom: 40px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
     }
     .footer-cta-box p { color: var(--text-secondary); font-size: 0.95rem; }
     .footer-cta-box strong { color: var(--text-primary); display: block; font-size: 1.05rem; margin-bottom: 4px; }
     .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      border-top: 1px solid var(--border); padding-top: 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
     }
     .footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
-    .footer-tcpa {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+    .footer-tcpa { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--text-muted); }
     .footer-tcpa i { color: var(--success); }
 
-    /* ============================================================
-       DEDICATED SERVICE PAGES
-    ============================================================ */
+    /* PAGE HEROES (inner pages) */
     .page-hero {
-      padding: 100px 0 80px;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
+      padding: 100px 0 80px; background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border); position: relative; overflow: hidden;
     }
     .page-hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 65%);
-      pointer-events: none;
+      content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 65%); pointer-events: none;
     }
     .page-hero-inner { max-width: 780px; }
     .page-hero h1 { margin: 16px 0 20px; }
     .page-hero p { font-size: 1.1rem; color: var(--text-secondary); }
     .content-block { max-width: 860px; margin: 0 auto; }
     .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
-    .info-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-    }
+    .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
     .info-card h4 { margin-bottom: 10px; color: var(--accent); font-size: 0.95rem; }
     .info-card p { font-size: 0.9rem; color: var(--text-secondary); }
 
-    /* Math box for reactivation */
+    /* MATH BOX */
     .math-box {
       background: linear-gradient(135deg, var(--bg-secondary), rgba(16,185,129,0.04));
-      border: 1px solid rgba(16,185,129,0.25);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      margin: 40px 0;
+      border: 1px solid rgba(16,185,129,0.25); border-radius: var(--radius-lg);
+      padding: 40px; margin: 40px 0;
     }
     .math-box h3 { color: var(--success); margin-bottom: 24px; }
     .math-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem;
     }
     .math-row:last-child { border-bottom: none; font-weight: 700; font-size: 1.05rem; }
     .math-row .val { color: var(--success); font-weight: 700; }
     .math-row:last-child .val { font-size: 1.4rem; }
 
-    /* Pricing all services */
-    .pricing-all-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-    /* Contact page form */
+    /* CONTACT FORM */
     .contact-form-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .form-group { margin-bottom: 20px; }
     .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
     .form-group input,
     .form-group select,
     .form-group textarea {
-      width: 100%;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: var(--text-primary);
-      font-size: 0.9rem;
-      font-family: var(--font-body);
-      transition: border-color var(--transition);
-      outline: none;
+      width: 100%; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 16px; color: var(--text-primary);
+      font-size: 0.9rem; font-family: var(--font-body); transition: border-color var(--transition); outline: none;
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(245,158,11,0.1);
-    }
+    .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,158,11,0.1); }
     .form-group textarea { resize: vertical; min-height: 100px; }
     .form-group select option { background: var(--bg-card); }
-    .calcom-placeholder {
-      background: var(--bg-card);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 48px 32px;
-      text-align: center;
-      color: var(--text-muted);
+    .form-success {
+      background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3);
+      border-radius: var(--radius); padding: 28px; text-align: center; display: none;
     }
-    .calcom-placeholder i { font-size: 2rem; margin-bottom: 12px; display: block; color: var(--border); }
-    /* REPLACE: Cal.com embed code for booking */
+    .form-success i { font-size: 2rem; color: var(--success); margin-bottom: 12px; display: block; }
+    .form-success h3 { color: var(--success); margin-bottom: 8px; font-size: 1.1rem; }
+    .form-success p { color: var(--text-secondary); font-size: 0.9rem; }
 
-    /* ============================================================
-       ANIMATIONS
-    ============================================================ */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    /* PERFORMANCE BADGE */
+    .performance-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+      border-radius: 8px; padding: 10px 18px; color: var(--success);
+      font-weight: 600; font-size: 0.9rem; margin-bottom: 24px;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    /* RECEPTIONIST FEATURES */
+    .receptionist-feature { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .receptionist-feature:last-child { border-bottom: none; }
+    .receptionist-feature .rf-icon {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); flex-shrink: 0; font-size: 1rem;
     }
+    .receptionist-feature h4 { font-size: 0.95rem; margin-bottom: 4px; }
+    .receptionist-feature p { font-size: 0.875rem; color: var(--text-secondary); }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
     .fade-up:nth-child(2) { transition-delay: 0.1s; }
     .fade-up:nth-child(3) { transition-delay: 0.2s; }
     .fade-up:nth-child(4) { transition-delay: 0.3s; }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
+    /* UTILITIES */
+    .text-center { text-align: center; }
+    .mb-16 { margin-bottom: 16px; }
+    .mb-24 { margin-bottom: 24px; }
+    .mb-32 { margin-bottom: 32px; }
+    .mb-48 { margin-bottom: 48px; }
+    .color-accent { color: var(--accent); }
+    .color-success { color: var(--success); }
+    .color-muted { color: var(--text-muted); }
+    .w-full { width: 100%; }
+    .divider { height: 1px; background: var(--border); margin: 48px 0; }
+
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
       .grid-4 { grid-template-columns: repeat(2, 1fr); }
       .steps-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid::before { display: none; }
-      .pricing-all-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       section { padding: 72px 0; }
       .hero { min-height: auto; padding: 60px 0 40px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .grid-4 { grid-template-columns: 1fr; }
+      .hero-grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
       .react-teaser .teaser-inner { grid-template-columns: 1fr; }
-      .proof-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
+      .proof-grid, .pricing-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .contact-form-wrap { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
@@ -1091,110 +614,16 @@
       .footer-cta-box { flex-direction: column; }
       h1 { font-size: 2.1rem; }
       h2 { font-size: 1.65rem; }
-      .pricing-all-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
-      .hero-grid { gap: 28px; }
       .decay-row { grid-template-columns: 80px 1fr 50px; }
       .math-row { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
-
-    /* ============================================================
-       UTILITY
-    ============================================================ */
-    .text-center { text-align: center; }
-    .text-left { text-align: left; }
-    .mb-0 { margin-bottom: 0; }
-    .mb-4 { margin-bottom: 4px; }
-    .mb-8 { margin-bottom: 8px; }
-    .mb-16 { margin-bottom: 16px; }
-    .mb-24 { margin-bottom: 24px; }
-    .mb-32 { margin-bottom: 32px; }
-    .mb-48 { margin-bottom: 48px; }
-    .mt-32 { margin-top: 32px; }
-    .mt-48 { margin-top: 48px; }
-    .color-accent { color: var(--accent); }
-    .color-success { color: var(--success); }
-    .color-danger { color: var(--danger); }
-    .color-muted { color: var(--text-muted); }
-    .color-secondary { color: var(--text-secondary); }
-    .w-full { width: 100%; }
-    .divider { height: 1px; background: var(--border); margin: 48px 0; }
-
-    /* Inline page-specific tweaks */
-    .reactivation-hero-num {
-      font-family: var(--font-display);
-      font-size: 5rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .performance-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(16,185,129,0.1);
-      border: 1px solid rgba(16,185,129,0.25);
-      border-radius: 8px;
-      padding: 10px 18px;
-      color: var(--success);
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 24px;
-    }
-    .industry-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 24px 0; }
-    .industry-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .industry-item i { color: var(--accent); width: 20px; text-align: center; }
-
-    /* receptionist features list */
-    .receptionist-feature {
-      display: flex;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .receptionist-feature:last-child { border-bottom: none; }
-    .receptionist-feature .rf-icon {
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      background: var(--accent-dim);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-      font-size: 1rem;
-    }
-    .receptionist-feature h4 { font-size: 0.95rem; margin-bottom: 4px; }
-    .receptionist-feature p { font-size: 0.875rem; color: var(--text-secondary); }
-
-    /* Form submit success state */
-    .form-success {
-      background: rgba(16,185,129,0.08);
-      border: 1px solid rgba(16,185,129,0.3);
-      border-radius: var(--radius);
-      padding: 28px;
-      text-align: center;
-      display: none;
-    }
-    .form-success i { font-size: 2rem; color: var(--success); margin-bottom: 12px; display: block; }
-    .form-success h3 { color: var(--success); margin-bottom: 8px; font-size: 1.1rem; }
-    .form-success p { color: var(--text-secondary); font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
-<!-- ============================================================
-     NAVBAR
-============================================================ -->
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo" onclick="showPage('home'); return false;">
@@ -1218,7 +647,7 @@
   </div>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#" data-page="home" onclick="showPage('home'); toggleMobile(); return false;">Home</a>
   <a href="#" data-page="solar" onclick="showPage('solar'); toggleMobile(); return false;">Solar Follow-Up</a>
@@ -1231,70 +660,48 @@
 
 <div class="main-content">
 
-<!-- ============================================================
-     HOME PAGE
-============================================================ -->
+<!-- ====== HOME PAGE ====== -->
 <div id="page-home" class="page active">
 
-  <!-- SECTION 1: HERO -->
+  <!-- HERO -->
   <section class="hero section-wrap">
     <div class="container">
       <div class="hero-grid">
-        <!-- LEFT: Text -->
         <div class="hero-text">
-          <div class="hero-tag">
-            <span class="dot"></span>
-            Voice AI for Solar &amp; Service Businesses
-          </div>
+          <div class="hero-tag"><span class="dot"></span>Voice AI for Solar &amp; Service Businesses</div>
           <h1 class="hero-headline">
             <span class="line-danger">Your Competitors Are Calling</span>
             Your Solar Leads First.<br>
             <span class="line-accent">We Fix That.</span>
           </h1>
-          <p class="hero-sub">
-            The average solar company takes 42 hours to follow up. Our automated system calls your leads in 60 seconds — day or night — so you close more deals without chasing anyone.
-          </p>
+          <p class="hero-sub">The average solar company takes 42 hours to follow up. Our automated system calls your leads in 60 seconds — day or night — so you close more deals without chasing anyone.</p>
           <ul class="hero-bullets">
-            <li class="hero-bullet">
-              <span class="bullet-icon"><i class="fa-solid fa-check"></i></span>
-              More appointments booked without your team lifting a finger
-            </li>
-            <li class="hero-bullet">
-              <span class="bullet-icon"><i class="fa-solid fa-check"></i></span>
-              Dead leads reactivated — turn old CRM contacts into new revenue
-            </li>
-            <li class="hero-bullet">
-              <span class="bullet-icon"><i class="fa-solid fa-check"></i></span>
-              24/7 coverage — leads at 9pm get called at 9pm
-            </li>
+            <li class="hero-bullet"><span class="bullet-icon"><i class="fa-solid fa-check"></i></span>More appointments booked without your team lifting a finger</li>
+            <li class="hero-bullet"><span class="bullet-icon"><i class="fa-solid fa-check"></i></span>Dead leads reactivated — turn old CRM contacts into new revenue</li>
+            <li class="hero-bullet"><span class="bullet-icon"><i class="fa-solid fa-check"></i></span>24/7 coverage — leads at 9pm get called at 9pm</li>
           </ul>
           <div class="hero-cta-row">
-            <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;">
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
-              Get Your Free Lead Response Audit
-            </a>
-            <a href="#" class="btn btn-secondary btn-lg" onclick="scrollToPricing(); return false;">
-              Start $99 Trial →
-            </a>
+            <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;"><i class="fa-solid fa-magnifying-glass-chart"></i> Get Your Free Lead Response Audit</a>
+            <a href="#" class="btn btn-secondary btn-lg" onclick="scrollToPricing(); return false;">Start $99 Trial →</a>
           </div>
           <div class="hero-trust">
             <i class="fa-solid fa-shield-halved color-success"></i>
-            All calls TCPA compliant
-            <span class="dot">·</span>
-            No contracts on trial
-            <span class="dot">·</span>
-            Credits go to calling infrastructure
+            All calls TCPA compliant <span class="dot">·</span> No contracts on trial <span class="dot">·</span> Credits go to calling infrastructure
           </div>
         </div>
 
-        <!-- RIGHT: Video -->
+        <!-- VIDEO BOX — FIX: Real HTML5 player, no more alert() -->
         <div class="video-box">
-          <!-- REPLACE: Video URL — AI video of Umair speaking 30 seconds about what SolarBooked does -->
-          <div class="video-inner" onclick="alert('Replace VIDEO_PLACEHOLDER_URL with actual video URL')">
+          <div class="video-thumbnail" id="videoThumbnail" onclick="playHeroVideo()">
             <div class="video-overlay-label">Watch how it works — 30 seconds</div>
             <div class="play-btn"><i class="fa-solid fa-play"></i></div>
             <p>Real demo — see the system in action</p>
           </div>
+          <!-- Place SolarBooked.mp4 in the same folder as this HTML file -->
+          <video id="heroVideo" controls preload="metadata">
+            <source src="SolarBooked.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
           <div class="video-caption">
             <i class="fa-solid fa-circle-info color-accent"></i>
             Real call — AI qualifying a solar lead and booking an appointment
@@ -1304,25 +711,17 @@
     </div>
   </section>
 
-  <!-- SECTION 2: LEAD REACTIVATION TEASER -->
+  <!-- LEAD REACTIVATION TEASER -->
   <section class="react-teaser section-wrap">
     <div class="container">
       <div class="teaser-inner">
         <div>
           <div class="eyebrow">Easiest Revenue You'll Ever Find</div>
           <h2 class="section-title">You're Sitting On Revenue You've Already Paid For</h2>
-          <p style="color:var(--text-secondary); margin-bottom:20px;">
-            Every lead in your CRM cost money to acquire — ads, referrals, events. Most never got a proper follow-up. They didn't say no. They just went quiet.
-          </p>
-          <p style="color:var(--text-secondary); margin-bottom:20px;">
-            Our system calls those dead leads automatically, finds out why they didn't move forward, handles basic objections, and rebooks interested ones — all without a single hour of your team's time.
-          </p>
-          <p style="color:var(--text-secondary); margin-bottom:28px;">
-            Performance-based pricing: you pay only when appointments are booked. Zero upfront cost. Zero risk.
-          </p>
-          <a href="#" class="btn btn-primary" onclick="showPage('reactivation'); return false;">
-            Run a Free Dead Lead Analysis →
-          </a>
+          <p style="color:var(--text-secondary); margin-bottom:20px;">Every lead in your CRM cost money to acquire — ads, referrals, events. Most never got a proper follow-up. They didn't say no. They just went quiet.</p>
+          <p style="color:var(--text-secondary); margin-bottom:20px;">Our system calls those dead leads automatically, finds out why they didn't move forward, handles basic objections, and rebooks interested ones — all without a single hour of your team's time.</p>
+          <p style="color:var(--text-secondary); margin-bottom:28px;">Performance-based pricing: you pay only when appointments are booked. Zero upfront cost. Zero risk.</p>
+          <a href="#" class="btn btn-primary" onclick="showPage('reactivation'); return false;">Run a Free Dead Lead Analysis →</a>
         </div>
         <div class="react-stat-box fade-up">
           <div class="react-stat-num">31%</div>
@@ -1335,7 +734,7 @@
     </div>
   </section>
 
-  <!-- SECTION 3: STATS -->
+  <!-- STATS -->
   <section class="stats-section section-wrap">
     <div class="container">
       <div class="text-center mb-48">
@@ -1372,7 +771,7 @@
     </div>
   </section>
 
-  <!-- SECTION 4: SERVICES OVERVIEW -->
+  <!-- SERVICES OVERVIEW -->
   <section class="section-wrap" style="background:var(--bg-primary);">
     <div class="container">
       <div class="text-center mb-48">
@@ -1405,7 +804,7 @@
     </div>
   </section>
 
-  <!-- SECTION 5: HOW IT WORKS -->
+  <!-- HOW IT WORKS -->
   <section class="how-section section-wrap">
     <div class="container">
       <div class="text-center mb-48">
@@ -1414,31 +813,15 @@
         <p class="section-subtitle" style="margin:0 auto;">From form submission to calendar booking — fully automated. Your team only shows up for the appointment.</p>
       </div>
       <div class="steps-grid">
-        <div class="step-item fade-up">
-          <div class="step-num">1</div>
-          <div class="step-title">Lead Fills Your Form</div>
-          <p class="step-desc">Someone clicks your ad or finds your site and submits their contact info. The trigger fires instantly.</p>
-        </div>
-        <div class="step-item fade-up">
-          <div class="step-num">2</div>
-          <div class="step-title">AI Calls in 60 Seconds</div>
-          <p class="step-desc">Our system places a call using your company name before the lead has even closed the tab.</p>
-        </div>
-        <div class="step-item fade-up">
-          <div class="step-num">3</div>
-          <div class="step-title">Natural Qualification</div>
-          <p class="step-desc">AI confirms homeownership, electricity bill, location, and interest level with a natural conversation — no scripts that sound like scripts.</p>
-        </div>
-        <div class="step-item fade-up">
-          <div class="step-num">4</div>
-          <div class="step-title">Appointment Auto-Booked</div>
-          <p class="step-desc">Qualified leads get a calendar slot locked in on the spot. Your CRM updates. Your team just shows up.</p>
-        </div>
+        <div class="step-item fade-up"><div class="step-num">1</div><div class="step-title">Lead Fills Your Form</div><p class="step-desc">Someone clicks your ad or finds your site and submits their contact info. The trigger fires instantly.</p></div>
+        <div class="step-item fade-up"><div class="step-num">2</div><div class="step-title">AI Calls in 60 Seconds</div><p class="step-desc">Our system places a call using your company name before the lead has even closed the tab.</p></div>
+        <div class="step-item fade-up"><div class="step-num">3</div><div class="step-title">Natural Qualification</div><p class="step-desc">AI confirms homeownership, electricity bill, location, and interest level with a natural conversation.</p></div>
+        <div class="step-item fade-up"><div class="step-num">4</div><div class="step-title">Appointment Auto-Booked</div><p class="step-desc">Qualified leads get a calendar slot locked in on the spot. Your CRM updates. Your team just shows up.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 6: SOCIAL PROOF -->
+  <!-- SOCIAL PROOF -->
   <section class="section-wrap" style="background:var(--bg-secondary);">
     <div class="container">
       <div class="text-center mb-48">
@@ -1447,21 +830,19 @@
         <p class="section-subtitle" style="margin:0 auto;">Hear a real call. See the workflow. Understand exactly what your leads experience.</p>
       </div>
       <div class="proof-grid">
-        <!-- Audio -->
         <div class="proof-card fade-up">
           <h3><i class="fa-solid fa-headphones color-accent"></i> &nbsp;Real Demo Call</h3>
           <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:16px;">Hear exactly what your leads experience when the automated system calls them.</p>
-          <!-- REPLACE: Set the src attribute below to your actual audio file URL -->
           <audio id="mainAudio" preload="none">
-            <source src="REPLACE_WITH_AUDIO_URL.mp3" type="audio/mpeg" />
+            <source src="solar.wav" type="audio/wav" />
           </audio>
           <div class="audio-player-custom">
-            <button class="audio-play-btn" id="mainAudioBtn" onclick="toggleAudio('mainAudio', 'mainAudioBtn', 'mainAudioBar', 'mainAudioTime')">
+            <button class="audio-play-btn" id="mainAudioBtn" onclick="toggleAudio('mainAudio','mainAudioBtn','mainAudioBar','mainAudioTime')">
               <i class="fa-solid fa-play"></i>
             </button>
             <div class="audio-track-info">
               <div class="audio-track-name">AI Call — Solar Lead Qualification</div>
-              <div class="audio-progress" onclick="seekAudio(event, 'mainAudio', 'mainAudioBar')">
+              <div class="audio-progress" onclick="seekAudio(event,'mainAudio','mainAudioBar')">
                 <div class="audio-progress-bar" id="mainAudioBar"></div>
               </div>
               <div class="audio-time" id="mainAudioTime">0:00 / 0:00</div>
@@ -1470,7 +851,6 @@
           <p style="font-size:0.8rem; color:var(--text-muted);">Hear exactly what your leads experience</p>
         </div>
 
-        <!-- Industry Proof -->
         <div class="proof-card fade-up">
           <h3><i class="fa-solid fa-chart-pie color-accent"></i> &nbsp;Industry Data</h3>
           <div class="industry-proof" style="margin-top:16px;">
@@ -1481,42 +861,25 @@
               <p style="font-size:0.75rem; color:var(--text-muted); margin-top:10px;">Source: EnergySage Consumer Data</p>
             </div>
           </div>
-          <!-- REPLACE: Add real testimonial here when first client is acquired -->
           <div style="margin-top:20px; padding:20px; background:var(--bg-secondary); border-radius:10px; border:1px dashed var(--border);">
             <p style="font-size:0.8rem; color:var(--text-muted); text-align:center;"><i class="fa-solid fa-quote-left" style="margin-right:6px;"></i> Client testimonial coming soon — first client in progress</p>
           </div>
         </div>
 
-        <!-- Screenshots -->
         <div class="proof-card full-width fade-up">
           <h3><i class="fa-solid fa-display color-accent"></i> &nbsp;The System — Built and Running</h3>
           <p style="color:var(--text-secondary); font-size:0.9rem; margin:12px 0 20px;">Full n8n automation workflow, Cal.com booking integration, and real-time call tracking in Google Sheets.</p>
           <div class="screenshot-grid">
-            <div class="screenshot-placeholder">
-              <!-- REPLACE: Screenshot — n8n workflow -->
-              <i class="fa-solid fa-diagram-project"></i>
-              <span>n8n Automation Workflow</span>
-              <span style="color:var(--text-muted);">Replace with actual screenshot</span>
-            </div>
-            <div class="screenshot-placeholder">
-              <!-- REPLACE: Screenshot — Cal.com booking -->
-              <i class="fa-regular fa-calendar-check"></i>
-              <span>Cal.com Booking Confirmation</span>
-              <span style="color:var(--text-muted);">Replace with actual screenshot</span>
-            </div>
-            <div class="screenshot-placeholder">
-              <!-- REPLACE: Screenshot — Google Sheets data -->
-              <i class="fa-solid fa-table-cells"></i>
-              <span>Google Sheets Call Data</span>
-              <span style="color:var(--text-muted);">Replace with actual screenshot</span>
-            </div>
+            <div class="screenshot-placeholder"><i class="fa-solid fa-diagram-project"></i><span>n8n Automation Workflow</span><span style="color:var(--text-muted);">Replace with actual screenshot</span></div>
+            <div class="screenshot-placeholder"><i class="fa-regular fa-calendar-check"></i><span>Cal.com Booking Confirmation</span><span style="color:var(--text-muted);">Replace with actual screenshot</span></div>
+            <div class="screenshot-placeholder"><i class="fa-solid fa-table-cells"></i><span>Google Sheets Call Data</span><span style="color:var(--text-muted);">Replace with actual screenshot</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 7: URGENCY -->
+  <!-- URGENCY -->
   <section class="urgency-section section-wrap">
     <div class="container">
       <div class="text-center mb-48">
@@ -1525,44 +888,24 @@
       </div>
       <div class="urgency-box">
         <h3><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;The Competitive Reality Right Now</h3>
-        <p>Solar companies using automated follow-up are booking 2–3× more appointments than manual teams this spring — peak solar inquiry season. Every week you wait, your leads are going to whoever calls first. Speed is no longer a nice-to-have. It's the deciding factor.</p>
+        <p>Solar companies using automated follow-up are booking 2–3× more appointments than manual teams this spring — peak solar inquiry season. Every week you wait, your leads are going to whoever calls first.</p>
       </div>
       <div class="decay-visual">
         <h3>Lead Value Decays Fast — Here's What the Data Shows</h3>
         <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:28px;">Lead interest drops dramatically the longer you wait. By 48 hours, you've lost 90% of your conversion probability.</p>
         <div class="decay-bars">
-          <div class="decay-row">
-            <span class="decay-label">At 0 minutes</span>
-            <div class="decay-bar-wrap"><div class="decay-bar" data-width="100" style="background:var(--success);">100%</div></div>
-            <span class="decay-pct">100%</span>
-          </div>
-          <div class="decay-row">
-            <span class="decay-label">At 5 minutes</span>
-            <div class="decay-bar-wrap"><div class="decay-bar" data-width="80" style="background:var(--success);">80%</div></div>
-            <span class="decay-pct">80%</span>
-          </div>
-          <div class="decay-row">
-            <span class="decay-label">At 30 minutes</span>
-            <div class="decay-bar-wrap"><div class="decay-bar" data-width="40" style="background:var(--accent);">40%</div></div>
-            <span class="decay-pct">40%</span>
-          </div>
-          <div class="decay-row">
-            <span class="decay-label">At 24 hours</span>
-            <div class="decay-bar-wrap"><div class="decay-bar" data-width="25" style="background:#f97316;">25%</div></div>
-            <span class="decay-pct">25%</span>
-          </div>
-          <div class="decay-row">
-            <span class="decay-label">At 48 hours</span>
-            <div class="decay-bar-wrap"><div class="decay-bar" data-width="10" style="background:var(--danger);">10%</div></div>
-            <span class="decay-pct">10%</span>
-          </div>
+          <div class="decay-row"><span class="decay-label">At 0 minutes</span><div class="decay-bar-wrap"><div class="decay-bar" data-width="100" style="background:var(--success);">100%</div></div><span class="decay-pct">100%</span></div>
+          <div class="decay-row"><span class="decay-label">At 5 minutes</span><div class="decay-bar-wrap"><div class="decay-bar" data-width="80" style="background:var(--success);">80%</div></div><span class="decay-pct">80%</span></div>
+          <div class="decay-row"><span class="decay-label">At 30 minutes</span><div class="decay-bar-wrap"><div class="decay-bar" data-width="40" style="background:var(--accent);">40%</div></div><span class="decay-pct">40%</span></div>
+          <div class="decay-row"><span class="decay-label">At 24 hours</span><div class="decay-bar-wrap"><div class="decay-bar" data-width="25" style="background:#f97316;">25%</div></div><span class="decay-pct">25%</span></div>
+          <div class="decay-row"><span class="decay-label">At 48 hours</span><div class="decay-bar-wrap"><div class="decay-bar" data-width="10" style="background:var(--danger);">10%</div></div><span class="decay-pct">10%</span></div>
         </div>
         <p style="margin-top:20px; font-size:0.8rem; color:var(--text-muted);">Source: Velocify Research</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 8: PRICING -->
+  <!-- PRICING -->
   <section class="pricing-section section-wrap" id="pricing-anchor">
     <div class="container">
       <div class="text-center mb-48">
@@ -1571,15 +914,11 @@
         <p class="section-subtitle" style="margin:0 auto;">No long-term contracts. No setup games. Pick the option that fits where you are.</p>
       </div>
       <div class="pricing-grid">
-        <!-- FULL SYSTEM -->
         <div class="pricing-card featured fade-up">
           <div class="pricing-badge">Most Popular</div>
           <div class="pricing-name">Full System</div>
-          <div class="pricing-price">
-            <span class="amount">$800</span>
-            <span class="period">/ month</span>
-          </div>
-          <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(245,158,11,0.08); border:1px solid var(--border-accent); border-radius:6px; padding:5px 12px; font-size:0.8rem; color:var(--text-secondary); margin-bottom:12px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
+          <div class="pricing-price"><span class="amount">$800</span><span class="period">/ month</span></div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.08);border:1px solid var(--border-accent);border-radius:6px;padding:5px 12px;font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
           <div class="pricing-subtitle">Complete dedicated system, built exclusively for your business.</div>
           <ul class="pricing-features">
             <li class="pricing-feature"><i class="fa-solid fa-check"></i> 600 calls per month included</li>
@@ -1590,18 +929,11 @@
             <li class="pricing-feature"><i class="fa-solid fa-check"></i> Ongoing optimization and support</li>
             <li class="pricing-feature"><i class="fa-solid fa-check"></i> Cancel anytime — no lock-in</li>
           </ul>
-          <a href="#" class="btn btn-primary w-full" style="justify-content:center;" onclick="showPage('contact'); return false;">
-            Get Started — Free Audit First
-          </a>
+          <a href="#" class="btn btn-primary w-full" style="justify-content:center;" onclick="showPage('contact'); return false;">Get Started — Free Audit First</a>
         </div>
-
-        <!-- TRIAL -->
         <div class="pricing-card fade-up">
           <div class="pricing-name">Trial Pack</div>
-          <div class="pricing-price">
-            <span class="amount">$99</span>
-            <span class="period">one-time</span>
-          </div>
+          <div class="pricing-price"><span class="amount">$99</span><span class="period">one-time</span></div>
           <div class="pricing-subtitle">Experience the system before committing to monthly. Real calls, real results.</div>
           <ul class="pricing-features">
             <li class="pricing-feature"><i class="fa-solid fa-check"></i> 800 minutes of AI calling (≈20–30 calls)</li>
@@ -1610,31 +942,25 @@
             <li class="pricing-feature"><i class="fa-solid fa-check"></i> Call recordings and dashboard access</li>
             <li class="pricing-feature"><i class="fa-solid fa-check"></i><strong style="color:var(--success);">Risk reversal:</strong> If zero appointments booked, free lead reactivation campaign provided</li>
           </ul>
-          <a href="#" class="btn btn-secondary w-full" style="justify-content:center;" onclick="showPage('contact'); return false;">
-            Start $99 Trial →
-          </a>
-          <div class="pricing-note">
-            <strong>Non-refundable — here's why:</strong> Your $99 goes directly to the AI calling infrastructure that powers your calls (Vapi platform costs). It's calling credits, not a service fee. If zero appointments are booked, we run a free lead reactivation campaign on your existing leads.
-          </div>
+          <a href="#" class="btn btn-secondary w-full" style="justify-content:center;" onclick="showPage('contact'); return false;">Start $99 Trial →</a>
+          <div class="pricing-note"><strong>Non-refundable — here's why:</strong> Your $99 goes directly to the AI calling infrastructure (Vapi platform costs). It's calling credits, not a service fee. If zero appointments are booked, we run a free lead reactivation campaign on your existing leads.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 9: FAQ -->
+  <!-- FAQ -->
   <section class="faq-section section-wrap">
     <div class="container">
       <div class="text-center mb-48">
         <div class="eyebrow">Honest Answers</div>
         <h2 class="section-title">Questions Solar Owners Actually Ask</h2>
       </div>
-      <div class="faq-list" id="faqList">
-        <!-- FAQ items injected by JS -->
-      </div>
+      <div class="faq-list" id="faqList"></div>
     </div>
   </section>
 
-  <!-- SECTION 10: FINAL CTA -->
+  <!-- FINAL CTA -->
   <section class="final-cta section-wrap">
     <div class="container">
       <div class="final-cta-box">
@@ -1642,23 +968,15 @@
         <h2>Your Leads Are Going Cold Right Now</h2>
         <p>Every hour without automated follow-up is another lead going to whoever calls first. Start with a free audit — we'll show you exactly how many leads you're losing and why, with zero commitment.</p>
         <div class="final-cta-btns">
-          <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;">
-            <i class="fa-solid fa-magnifying-glass-chart"></i>
-            Get Your Free Lead Response Audit
-          </a>
-          <a href="#" class="btn btn-secondary btn-lg" onclick="scrollToPricing(); return false;">
-            Start $99 Trial
-          </a>
+          <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;"><i class="fa-solid fa-magnifying-glass-chart"></i> Get Your Free Lead Response Audit</a>
+          <a href="#" class="btn btn-secondary btn-lg" onclick="scrollToPricing(); return false;">Start $99 Trial</a>
         </div>
       </div>
     </div>
   </section>
+</div><!-- end home -->
 
-</div><!-- end home page -->
-
-<!-- ============================================================
-     SOLAR FOLLOW-UP PAGE
-============================================================ -->
+<!-- ====== SOLAR FOLLOW-UP PAGE ====== -->
 <div id="page-solar" class="page">
   <div class="page-hero section-wrap">
     <div class="container">
@@ -1666,95 +984,52 @@
         <div class="eyebrow">Solar Lead Follow-Up</div>
         <h1>Stop Losing Solar Deals to The First Company That Picks Up the Phone</h1>
         <p>Your lead just submitted a form. Right now they're waiting to hear from someone. Your automated system can be that someone — in 60 seconds, with your company name.</p>
-        <div style="display:flex; gap:16px; margin-top:32px; flex-wrap:wrap;">
+        <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
           <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;">Get Your Free Lead Audit</a>
           <a href="#" class="btn btn-secondary btn-lg" onclick="showPage('pricing-page'); return false;">See Pricing</a>
         </div>
       </div>
     </div>
   </div>
-
   <section class="section-wrap" style="background:var(--bg-primary);">
     <div class="container">
       <div class="content-block">
         <div class="eyebrow">The Problem</div>
         <h2 class="section-title">Your Lead Response Time Is Killing Your Close Rate</h2>
-        <p style="color:var(--text-secondary); margin-bottom:20px;">The average solar company takes 42 hours to follow up on a new lead. In that window, your lead has moved on — researched three more companies, taken a competitor's call, and maybe already signed a contract.</p>
-        <p style="color:var(--text-secondary); margin-bottom:20px;">After-hours is even worse. 40% of solar shopping happens after 6pm. Those leads sit until morning, by which time their interest has decayed by 75% or more.</p>
+        <p style="color:var(--text-secondary);margin-bottom:20px;">The average solar company takes 42 hours to follow up on a new lead. In that window, your lead has moved on — researched three more companies, taken a competitor's call, and maybe already signed a contract.</p>
+        <p style="color:var(--text-secondary);margin-bottom:20px;">After-hours is even worse. 40% of solar shopping happens after 6pm. Those leads sit until morning, by which time their interest has decayed by 75% or more.</p>
         <p style="color:var(--text-secondary);">The companies winning right now aren't necessarily better at solar. They're better at answering first.</p>
-
         <div class="info-grid">
-          <div class="info-card">
-            <h4><i class="fa-solid fa-triangle-exclamation"></i> The Problem</h4>
-            <p>Leads submitted at 8pm wait until 9am for a call. Competitors with automation have already called, qualified, and booked the appointment.</p>
-          </div>
-          <div class="info-card">
-            <h4><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> The Solution</h4>
-            <p>Our automated system triggers on form submission 24/7. Within 60 seconds, your lead gets a call using your company name, on your script.</p>
-          </div>
-          <div class="info-card">
-            <h4><i class="fa-solid fa-users"></i> Who It's For</h4>
-            <p>Solar companies with 5–50 employees in the US, Canada, or UK that are running ads or getting inbound leads and can't keep up with follow-up.</p>
-          </div>
-          <div class="info-card">
-            <h4><i class="fa-solid fa-gear"></i> Tech Stack</h4>
-            <p>Vapi (voice AI) + n8n (automation) + Cal.com (booking). All integrated. All running without your team touching a thing.</p>
-          </div>
+          <div class="info-card"><h4><i class="fa-solid fa-triangle-exclamation"></i> The Problem</h4><p>Leads submitted at 8pm wait until 9am for a call. Competitors with automation have already called, qualified, and booked the appointment.</p></div>
+          <div class="info-card"><h4><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> The Solution</h4><p>Our automated system triggers on form submission 24/7. Within 60 seconds, your lead gets a call using your company name, on your script.</p></div>
+          <div class="info-card"><h4><i class="fa-solid fa-users"></i> Who It's For</h4><p>Solar companies with 5–50 employees in the US, Canada, or UK that are running ads or getting inbound leads and can't keep up with follow-up.</p></div>
+          <div class="info-card"><h4><i class="fa-solid fa-gear"></i> Tech Stack</h4><p>Vapi (voice AI) + n8n (automation) + Cal.com (booking). All integrated. All running without your team touching a thing.</p></div>
         </div>
-
         <div class="divider"></div>
-
         <div class="eyebrow">The Process</div>
         <h2 class="section-title">What Happens When a Lead Submits Your Form</h2>
         <div class="steps-grid" style="margin-bottom:0;">
-          <div class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-title">Form Submission</div>
-            <p class="step-desc">Lead submits on your site or landing page. The n8n automation triggers in real time.</p>
-          </div>
-          <div class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-title">Call in 60 Seconds</div>
-            <p class="step-desc">Vapi places the call from a local number using your company name. No delay, no queue.</p>
-          </div>
-          <div class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-title">5-Minute Qualification</div>
-            <p class="step-desc">AI confirms homeownership, electricity bill, location, and interest. Natural conversation, not a script read-out.</p>
-          </div>
-          <div class="step-item">
-            <div class="step-num">4</div>
-            <div class="step-title">Calendar Booked</div>
-            <p class="step-desc">Qualified lead gets a Cal.com slot booked instantly. CRM updated. Confirmation text sent. Your team just shows up.</p>
-          </div>
+          <div class="step-item"><div class="step-num">1</div><div class="step-title">Form Submission</div><p class="step-desc">Lead submits on your site or landing page. The n8n automation triggers in real time.</p></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-title">Call in 60 Seconds</div><p class="step-desc">Vapi places the call from a local number using your company name. No delay, no queue.</p></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-title">5-Minute Qualification</div><p class="step-desc">AI confirms homeownership, electricity bill, location, and interest. Natural conversation, not a script read-out.</p></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-title">Calendar Booked</div><p class="step-desc">Qualified lead gets a Cal.com slot booked instantly. CRM updated. Confirmation text sent. Your team just shows up.</p></div>
         </div>
-
         <div class="divider"></div>
-
-        <!-- Demo audio placeholder -->
         <div class="eyebrow">Hear It in Action</div>
         <h2 class="section-title mb-16">Real Call — Qualification in Action</h2>
-        <p style="color:var(--text-secondary); margin-bottom:24px;">This is what your leads hear when our system calls them. Natural, professional, using your company name.</p>
-        <!-- REPLACE: Set src to your actual audio file URL -->
+        <p style="color:var(--text-secondary);margin-bottom:24px;">This is what your leads hear when our system calls them. Natural, professional, using your company name.</p>
         <audio id="solarAudio" preload="none">
-          <source src="REPLACE_WITH_AUDIO_URL.mp3" type="audio/mpeg" />
+          <source src="solar.wav" type="audio/wav" />
         </audio>
         <div class="audio-player-custom" style="max-width:560px;">
-          <button class="audio-play-btn" id="solarAudioBtn" onclick="toggleAudio('solarAudio', 'solarAudioBtn', 'solarAudioBar', 'solarAudioTime')">
-            <i class="fa-solid fa-play"></i>
-          </button>
+          <button class="audio-play-btn" id="solarAudioBtn" onclick="toggleAudio('solarAudio','solarAudioBtn','solarAudioBar','solarAudioTime')"><i class="fa-solid fa-play"></i></button>
           <div class="audio-track-info">
             <div class="audio-track-name">Solar Lead Qualification Call — Demo</div>
-            <div class="audio-progress" onclick="seekAudio(event, 'solarAudio', 'solarAudioBar')">
-              <div class="audio-progress-bar" id="solarAudioBar"></div>
-            </div>
+            <div class="audio-progress" onclick="seekAudio(event,'solarAudio','solarAudioBar')"><div class="audio-progress-bar" id="solarAudioBar"></div></div>
             <div class="audio-time" id="solarAudioTime">0:00 / 0:00</div>
           </div>
         </div>
-
         <div class="divider"></div>
-
-        <!-- Pricing -->
         <div class="eyebrow">Pricing</div>
         <h2 class="section-title">Get Started Today</h2>
         <div class="pricing-grid" style="margin-bottom:0;">
@@ -1762,7 +1037,7 @@
             <div class="pricing-badge">Recommended</div>
             <div class="pricing-name">Full System</div>
             <div class="pricing-price"><span class="amount">$800</span><span class="period">/ month</span></div>
-            <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(245,158,11,0.08); border:1px solid var(--border-accent); border-radius:6px; padding:5px 12px; font-size:0.8rem; color:var(--text-secondary); margin-bottom:10px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.08);border:1px solid var(--border-accent);border-radius:6px;padding:5px 12px;font-size:0.8rem;color:var(--text-secondary);margin-bottom:10px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
             <div class="pricing-subtitle">Complete dedicated system for solar lead follow-up.</div>
             <ul class="pricing-features">
               <li class="pricing-feature"><i class="fa-solid fa-check"></i>600 calls / month</li>
@@ -1788,7 +1063,6 @@
       </div>
     </div>
   </section>
-
   <section class="final-cta section-wrap">
     <div class="container">
       <div class="final-cta-box">
@@ -1801,11 +1075,9 @@
       </div>
     </div>
   </section>
-</div><!-- end solar page -->
+</div><!-- end solar -->
 
-<!-- ============================================================
-     LEAD REACTIVATION PAGE
-============================================================ -->
+<!-- ====== LEAD REACTIVATION PAGE ====== -->
 <div id="page-reactivation" class="page">
   <div class="page-hero section-wrap">
     <div class="container">
@@ -1813,103 +1085,62 @@
         <div class="eyebrow">Lead Reactivation</div>
         <h1>You've Already Paid For These Leads. Let's Get Them Back.</h1>
         <p>Your CRM is full of leads you spent money acquiring. Most never got a real follow-up. They're not gone — they just need the right system calling them at the right time.</p>
-        <div style="display:flex; gap:16px; margin-top:32px; flex-wrap:wrap;">
+        <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
           <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;">Run Free Dead Lead Analysis</a>
         </div>
       </div>
     </div>
   </div>
-
   <section class="section-wrap" style="background:var(--bg-primary);">
     <div class="container">
       <div class="content-block">
         <div class="performance-badge"><i class="fa-solid fa-circle-check"></i> Performance-based — you pay only when appointments are booked</div>
-
         <div class="eyebrow">The Opportunity</div>
         <h2 class="section-title">What Are Dead Leads, and Why Do They Still Matter?</h2>
-        <p style="color:var(--text-secondary); margin-bottom:20px;">A dead lead is any contact in your CRM who showed interest — filled a form, clicked an ad, called in — but never converted. Most businesses write them off.</p>
-        <p style="color:var(--text-secondary); margin-bottom:20px;">The truth: most of those leads didn't say no. They just fell through the cracks. Nobody followed up consistently. The timing wasn't right. They got busy. Life happened.</p>
+        <p style="color:var(--text-secondary);margin-bottom:20px;">A dead lead is any contact in your CRM who showed interest — filled a form, clicked an ad, called in — but never converted. Most businesses write them off.</p>
+        <p style="color:var(--text-secondary);margin-bottom:20px;">The truth: most of those leads didn't say no. They just fell through the cracks. Nobody followed up consistently. The timing wasn't right. They got busy. Life happened.</p>
         <p style="color:var(--text-secondary);">Our system calls those contacts, finds out what happened, handles the most common objections, and gets genuinely interested ones rebooked into your calendar — all automatically, all performance-based.</p>
-
         <div class="info-grid">
-          <div class="info-card">
-            <h4><i class="fa-solid fa-users"></i> Who It's For</h4>
-            <p>Any business with 3+ months of unworked leads in a CRM, spreadsheet, or database. Works for solar, HVAC, roofing, financial services, and more.</p>
-          </div>
-          <div class="info-card">
-            <h4><i class="fa-solid fa-dollar-sign" style="color:var(--success);"></i> How Pricing Works</h4>
-            <p>10% per recovered booking. Zero upfront cost. You only pay when our system produces an appointment. If nothing books, you pay nothing.</p>
-          </div>
+          <div class="info-card"><h4><i class="fa-solid fa-users"></i> Who It's For</h4><p>Any business with 3+ months of unworked leads in a CRM, spreadsheet, or database. Works for solar, HVAC, roofing, financial services, and more.</p></div>
+          <div class="info-card"><h4><i class="fa-solid fa-dollar-sign" style="color:var(--success);"></i> How Pricing Works</h4><p>10% per recovered booking. Zero upfront cost. You only pay when our system produces an appointment. If nothing books, you pay nothing.</p></div>
         </div>
-
         <div class="divider"></div>
-
         <div class="eyebrow">The Math</div>
         <h2 class="section-title">What Reactivation Actually Means for Your Revenue</h2>
-        <p style="color:var(--text-secondary); margin-bottom:28px;">Here's a conservative example using typical solar deal values. Your numbers will vary based on deal size and lead count.</p>
-
+        <p style="color:var(--text-secondary);margin-bottom:28px;">Here's a conservative example using typical solar deal values.</p>
         <div class="math-box">
           <h3><i class="fa-solid fa-calculator"></i> &nbsp;Example: 100 Dead Solar Leads</h3>
-          <div class="math-row">
-            <span>Dead leads in your CRM</span>
-            <span class="val">100 contacts</span>
-          </div>
-          <div class="math-row">
-            <span>Average reactivation rate</span>
-            <span class="val">31%</span>
-          </div>
-          <div class="math-row">
-            <span>Appointments recovered</span>
-            <span class="val">31 appointments</span>
-          </div>
-          <div class="math-row">
-            <span>Average solar deal value</span>
-            <span class="val">$15,000</span>
-          </div>
-          <div class="math-row">
-            <span>Pipeline value recovered</span>
-            <span class="val">$465,000</span>
-          </div>
-          <div class="math-row">
-            <span>Your cost (10% per booking)</span>
-            <span class="val" style="color:var(--accent);">$0 upfront</span>
-          </div>
-          <div class="math-row">
-            <span style="color:var(--success); font-weight:700;">Net pipeline opportunity</span>
-            <span class="val" style="font-size:1.6rem;">$465,000</span>
-          </div>
+          <div class="math-row"><span>Dead leads in your CRM</span><span class="val">100 contacts</span></div>
+          <div class="math-row"><span>Average reactivation rate</span><span class="val">31%</span></div>
+          <div class="math-row"><span>Appointments recovered</span><span class="val">31 appointments</span></div>
+          <div class="math-row"><span>Average solar deal value</span><span class="val">$15,000</span></div>
+          <div class="math-row"><span>Pipeline value recovered</span><span class="val">$465,000</span></div>
+          <div class="math-row"><span>Your cost (10% per booking)</span><span class="val" style="color:var(--accent);">$0 upfront</span></div>
+          <div class="math-row"><span style="color:var(--success);font-weight:700;">Net pipeline opportunity</span><span class="val" style="font-size:1.6rem;">$465,000</span></div>
         </div>
-
         <div class="divider"></div>
-
         <div class="eyebrow">Industry Validation</div>
         <div class="industry-proof">
           <div class="icon-wrap"><i class="fa-solid fa-building"></i></div>
           <div>
-            <p style="font-weight:600; color:var(--text-primary); margin-bottom:8px;">31% Reactivation Rate — Validated at Scale</p>
-            <p style="font-size:0.9rem; color:var(--text-secondary);">Up to 31% of dead leads can be reactivated with the right follow-up system. This figure was validated by Indigrati Agency working with publicly traded companies across thousands of lead records — not a small sample or a cherry-picked case study.</p>
-            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:10px;">Source: Indigrati Agency, validated with publicly traded companies</p>
+            <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px;">31% Reactivation Rate — Validated at Scale</p>
+            <p style="font-size:0.9rem;color:var(--text-secondary);">Up to 31% of dead leads can be reactivated with the right follow-up system. Validated by Indigrati Agency working with publicly traded companies across thousands of lead records.</p>
+            <p style="font-size:0.75rem;color:var(--text-muted);margin-top:10px;">Source: Indigrati Agency, validated with publicly traded companies</p>
           </div>
         </div>
-
         <div class="divider"></div>
-
         <div class="text-center">
           <div class="eyebrow">Zero Risk to Start</div>
           <h2 class="section-title">Run a Free Dead Lead Analysis</h2>
-          <p style="color:var(--text-secondary); margin-bottom:28px; max-width:500px; margin-left:auto; margin-right:auto;">Share your lead list with us. We'll analyze it and tell you how many contacts are likely reactivatable — before you spend a cent.</p>
-          <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;">
-            <i class="fa-solid fa-magnifying-glass-chart"></i> Run Free Dead Lead Analysis
-          </a>
+          <p style="color:var(--text-secondary);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;">Share your lead list with us. We'll analyze it and tell you how many contacts are likely reactivatable — before you spend a cent.</p>
+          <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;"><i class="fa-solid fa-magnifying-glass-chart"></i> Run Free Dead Lead Analysis</a>
         </div>
       </div>
     </div>
   </section>
-</div><!-- end reactivation page -->
+</div><!-- end reactivation -->
 
-<!-- ============================================================
-     AI RECEPTIONIST PAGE
-============================================================ -->
+<!-- ====== AI RECEPTIONIST PAGE ====== -->
 <div id="page-receptionist" class="page">
   <div class="page-hero section-wrap">
     <div class="container">
@@ -1917,122 +1148,45 @@
         <div class="eyebrow">AI Receptionist — Solar</div>
         <h1>Your Solar Company Loses Deals Every Time the Phone Goes Unanswered</h1>
         <p>When your sales team is on consultations, your front desk is swamped, or a lead calls at 8pm — who picks up? With the Solar AI Receptionist, the answer is always: someone does. In under 2 seconds.</p>
-        <div style="display:flex; gap:16px; margin-top:32px; flex-wrap:wrap;">
+        <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
           <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;">Book Free Consultation</a>
           <a href="#" class="btn btn-secondary btn-lg" onclick="showPage('pricing-page'); return false;">See Pricing</a>
         </div>
       </div>
     </div>
   </div>
-
   <section class="section-wrap" style="background:var(--bg-primary);">
     <div class="container">
       <div class="content-block">
         <div class="eyebrow">The Problem</div>
         <h2 class="section-title">Solar Leads Don't Wait. Your Voicemail Won't Close Them.</h2>
-        <p style="color:var(--text-secondary); margin-bottom:20px;">A homeowner sees your ad, gets curious, and calls. Your team is on a site visit. The phone rings out. That homeowner doesn't leave a message — they call the next solar company on the list, and that company answers.</p>
-        <p style="color:var(--text-secondary); margin-bottom:20px;">This happens multiple times a day at most solar companies. It's invisible revenue loss — you never know the call came in, and the lead never shows up in your CRM.</p>
-        <p style="color:var(--text-secondary); margin-bottom:28px;">40% of solar inquiries happen after business hours. Without a system that answers at 7pm on a Tuesday, you're handing those leads to whoever does.</p>
-
+        <p style="color:var(--text-secondary);margin-bottom:20px;">A homeowner sees your ad, gets curious, and calls. Your team is on a site visit. The phone rings out. That homeowner doesn't leave a message — they call the next solar company on the list, and that company answers.</p>
+        <p style="color:var(--text-secondary);margin-bottom:20px;">This happens multiple times a day at most solar companies. It's invisible revenue loss — you never know the call came in, and the lead never shows up in your CRM.</p>
+        <p style="color:var(--text-secondary);margin-bottom:28px;">40% of solar inquiries happen after business hours. Without a system that answers at 7pm on a Tuesday, you're handing those leads to whoever does.</p>
         <div class="info-grid">
-          <div class="info-card">
-            <h4><i class="fa-solid fa-triangle-exclamation"></i> What's Happening Now</h4>
-            <p>Calls hit voicemail during site visits, lunch, busy periods, and evenings. Most callers hang up without leaving a message and move on to a competitor.</p>
-          </div>
-          <div class="info-card">
-            <h4><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> What Changes</h4>
-            <p>Every inbound call is answered by an AI that uses your company name, qualifies the caller as a solar lead, and books a consultation — regardless of when they call.</p>
-          </div>
-          <div class="info-card">
-            <h4><i class="fa-solid fa-users"></i> Who It's For</h4>
-            <p>Solar companies in the US, Canada, and UK generating inbound interest but losing calls they never see. Works best with 3+ person sales teams.</p>
-          </div>
-          <div class="info-card">
-            <h4><i class="fa-solid fa-sun" style="color:var(--accent);"></i> Solar-Specific</h4>
-            <p>This isn't a generic answering service. The AI is scripted around solar — homeownership, electricity bills, roof type, financing interest, and booking a consultation with your team.</p>
-          </div>
+          <div class="info-card"><h4><i class="fa-solid fa-triangle-exclamation"></i> What's Happening Now</h4><p>Calls hit voicemail during site visits, lunch, busy periods, and evenings. Most callers hang up without leaving a message and move on to a competitor.</p></div>
+          <div class="info-card"><h4><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> What Changes</h4><p>Every inbound call is answered by an AI that uses your company name, qualifies the caller as a solar lead, and books a consultation — regardless of when they call.</p></div>
+          <div class="info-card"><h4><i class="fa-solid fa-users"></i> Who It's For</h4><p>Solar companies in the US, Canada, and UK generating inbound interest but losing calls they never see. Works best with 3+ person sales teams.</p></div>
+          <div class="info-card"><h4><i class="fa-solid fa-sun" style="color:var(--accent);"></i> Solar-Specific</h4><p>This isn't a generic answering service. The AI is scripted around solar — homeownership, electricity bills, roof type, financing interest, and booking a consultation with your team.</p></div>
         </div>
-
         <div class="divider"></div>
-
         <div class="eyebrow">What the AI Does on Every Call</div>
         <h2 class="section-title">Handles the Inbound. Protects the Pipeline.</h2>
         <div>
-          <div class="receptionist-feature">
-            <div class="rf-icon"><i class="fa-solid fa-phone"></i></div>
-            <div>
-              <h4>Answers Every Inbound Call</h4>
-              <p>Picks up in under 2 seconds using your company name. Callers hear a professional, natural-sounding voice — not a robot, not a hold queue. Available 24/7, including evenings and weekends.</p>
-            </div>
-          </div>
-          <div class="receptionist-feature">
-            <div class="rf-icon"><i class="fa-solid fa-solar-panel"></i></div>
-            <div>
-              <h4>Qualifies the Solar Lead</h4>
-              <p>Asks the right questions for solar: homeowner or renter, approximate monthly electricity bill, roof age and type, current provider, and level of interest. You get qualified leads, not tyre-kickers.</p>
-            </div>
-          </div>
-          <div class="receptionist-feature">
-            <div class="rf-icon"><i class="fa-regular fa-calendar-check"></i></div>
-            <div>
-              <h4>Books the Consultation Automatically</h4>
-              <p>Qualified callers get a slot in your calendar on the spot. No back-and-forth, no missed follow-ups. Booking syncs with Cal.com or your existing calendar system instantly.</p>
-            </div>
-          </div>
-          <div class="receptionist-feature">
-            <div class="rf-icon"><i class="fa-solid fa-bolt" style="color:var(--accent);"></i></div>
-            <div>
-              <h4>Routes Hot Leads to Your Sales Team</h4>
-              <p>When a caller is highly motivated — asking about pricing, financing, or wanting to move fast — the AI flags them as priority and notifies your sales team in real time so they can follow up immediately.</p>
-            </div>
-          </div>
-          <div class="receptionist-feature">
-            <div class="rf-icon"><i class="fa-solid fa-message"></i></div>
-            <div>
-              <h4>Sends Confirmation Text</h4>
-              <p>Every booked consultation triggers an automatic SMS to the homeowner confirming the date, time, and what to expect. Fewer no-shows, more prepared prospects.</p>
-            </div>
-          </div>
+          <div class="receptionist-feature"><div class="rf-icon"><i class="fa-solid fa-phone"></i></div><div><h4>Answers Every Inbound Call</h4><p>Picks up in under 2 seconds using your company name. Available 24/7, including evenings and weekends.</p></div></div>
+          <div class="receptionist-feature"><div class="rf-icon"><i class="fa-solid fa-solar-panel"></i></div><div><h4>Qualifies the Solar Lead</h4><p>Asks the right questions for solar: homeowner or renter, monthly electricity bill, roof age and type, current provider, and level of interest.</p></div></div>
+          <div class="receptionist-feature"><div class="rf-icon"><i class="fa-regular fa-calendar-check"></i></div><div><h4>Books the Consultation Automatically</h4><p>Qualified callers get a slot in your calendar on the spot. Booking syncs with Cal.com or your existing calendar system instantly.</p></div></div>
+          <div class="receptionist-feature"><div class="rf-icon"><i class="fa-solid fa-bolt" style="color:var(--accent);"></i></div><div><h4>Routes Hot Leads to Your Sales Team</h4><p>When a caller is highly motivated, the AI flags them as priority and notifies your sales team in real time.</p></div></div>
+          <div class="receptionist-feature"><div class="rf-icon"><i class="fa-solid fa-message"></i></div><div><h4>Sends Confirmation Text</h4><p>Every booked consultation triggers an automatic SMS to the homeowner. Fewer no-shows, more prepared prospects.</p></div></div>
         </div>
-
         <div class="divider"></div>
-
-        <div class="eyebrow">The Bigger Picture</div>
-        <h2 class="section-title">Pair It With Lead Follow-Up for a Complete System</h2>
-        <div style="background:linear-gradient(135deg, var(--bg-secondary), rgba(245,158,11,0.04)); border:1px solid var(--border-accent); border-radius:var(--radius-lg); padding:36px; margin-bottom:32px;">
-          <p style="color:var(--text-secondary); margin-bottom:16px;">The AI Receptionist handles inbound calls. The Solar Lead Follow-Up system handles outbound — calling every form submission within 60 seconds. Together, they cover every angle of your lead pipeline:</p>
-          <ul style="display:flex; flex-direction:column; gap:12px; margin-top:20px;">
-            <li style="display:flex; gap:12px; font-size:0.9rem; color:var(--text-secondary);">
-              <i class="fa-solid fa-circle-check" style="color:var(--success); margin-top:3px;"></i>
-              <span><strong style="color:var(--text-primary);">Inbound calls answered</strong> — no lead hits voicemail again</span>
-            </li>
-            <li style="display:flex; gap:12px; font-size:0.9rem; color:var(--text-secondary);">
-              <i class="fa-solid fa-circle-check" style="color:var(--success); margin-top:3px;"></i>
-              <span><strong style="color:var(--text-primary);">Form submissions called back in 60 seconds</strong> — no lead waits 42 hours</span>
-            </li>
-            <li style="display:flex; gap:12px; font-size:0.9rem; color:var(--text-secondary);">
-              <i class="fa-solid fa-circle-check" style="color:var(--success); margin-top:3px;"></i>
-              <span><strong style="color:var(--text-primary);">Dead leads reactivated</strong> — old CRM contacts turned into new pipeline</span>
-            </li>
-          </ul>
-          <div style="margin-top:24px;">
-            <a href="#" class="btn btn-secondary" onclick="showPage('solar'); return false;">See Solar Lead Follow-Up →</a>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Pricing -->
         <div class="eyebrow">Pricing</div>
         <h2 class="section-title">Simple, Transparent Pricing</h2>
         <div class="pricing-card" style="max-width:440px;">
           <div class="pricing-name">AI Receptionist — Solar</div>
-          <div class="pricing-price">
-            <span class="amount">$500</span>
-            <span class="period">/ month</span>
-          </div>
-          <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(245,158,11,0.08); border:1px solid var(--border-accent); border-radius:6px; padding:5px 12px; font-size:0.8rem; color:var(--text-secondary); margin-bottom:12px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
-          <div class="pricing-subtitle">Built specifically for solar companies. Handles every inbound call so your sales team focuses only on consultations.</div>
+          <div class="pricing-price"><span class="amount">$500</span><span class="period">/ month</span></div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.08);border:1px solid var(--border-accent);border-radius:6px;padding:5px 12px;font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
+          <div class="pricing-subtitle">Built specifically for solar companies.</div>
           <ul class="pricing-features">
             <li class="pricing-feature"><i class="fa-solid fa-check"></i>Unlimited inbound call answering</li>
             <li class="pricing-feature"><i class="fa-solid fa-check"></i>Solar-specific qualification on every call</li>
@@ -2042,29 +1196,26 @@
             <li class="pricing-feature"><i class="fa-solid fa-check"></i>Call recordings and dashboard</li>
             <li class="pricing-feature"><i class="fa-solid fa-check"></i>Custom script using your company name</li>
           </ul>
-          <a href="#" class="btn btn-primary w-full" style="justify-content:center; margin-top:8px;" onclick="showPage('contact'); return false;">Book Free Consultation</a>
+          <a href="#" class="btn btn-primary w-full" style="justify-content:center;margin-top:8px;" onclick="showPage('contact'); return false;">Book Free Consultation</a>
         </div>
       </div>
     </div>
   </section>
-
   <section class="final-cta section-wrap">
     <div class="container">
       <div class="final-cta-box">
         <div class="eyebrow">Stop Losing Inbound Calls</div>
         <h2>Every Unanswered Call Is a Solar Deal You'll Never Know You Lost</h2>
-        <p>Book a free 20-minute consultation. We'll walk through your current inbound call process, show you where leads are leaking, and tell you exactly what the AI Receptionist would change.</p>
+        <p>Book a free 20-minute consultation. We'll walk through your current inbound call process and tell you exactly what the AI Receptionist would change.</p>
         <div class="final-cta-btns">
           <a href="#" class="btn btn-primary btn-lg" onclick="showPage('contact'); return false;"><i class="fa-solid fa-phone"></i> Book Free Consultation</a>
         </div>
       </div>
     </div>
   </section>
-</div><!-- end receptionist page -->
+</div><!-- end receptionist -->
 
-<!-- ============================================================
-     PRICING PAGE
-============================================================ -->
+<!-- ====== PRICING PAGE ====== -->
 <div id="page-pricing-page" class="page">
   <div class="page-hero section-wrap">
     <div class="container">
@@ -2075,16 +1226,15 @@
       </div>
     </div>
   </div>
-
   <section class="section-wrap" style="background:var(--bg-primary);">
     <div class="container">
       <div class="eyebrow text-center mb-32">Solar Lead Follow-Up</div>
-      <div class="pricing-grid" style="max-width:860px; margin:0 auto 64px;">
+      <div class="pricing-grid" style="max-width:860px;margin:0 auto 64px;">
         <div class="pricing-card featured">
           <div class="pricing-badge">Start Here</div>
           <div class="pricing-name">Full System</div>
           <div class="pricing-price"><span class="amount">$800</span><span class="period">/ month</span></div>
-          <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(245,158,11,0.08); border:1px solid var(--border-accent); border-radius:6px; padding:5px 12px; font-size:0.8rem; color:var(--text-secondary); margin-bottom:10px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.08);border:1px solid var(--border-accent);border-radius:6px;padding:5px 12px;font-size:0.8rem;color:var(--text-secondary);margin-bottom:10px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
           <div class="pricing-subtitle">Complete done-for-you solar lead follow-up system.</div>
           <ul class="pricing-features">
             <li class="pricing-feature"><i class="fa-solid fa-check"></i>600 calls per month</li>
@@ -2109,12 +1259,12 @@
             <li class="pricing-feature"><i class="fa-solid fa-check"></i><strong style="color:var(--success);">Risk reversal:</strong> Free reactivation campaign if zero bookings</li>
           </ul>
           <a href="#" class="btn btn-secondary w-full" style="justify-content:center;" onclick="showPage('contact'); return false;">Start $99 Trial →</a>
-          <div class="pricing-note"><strong>Why non-refundable?</strong> Your $99 becomes calling credits on the Vapi platform — it's infrastructure cost, not a service fee. Zero appointments booked? We run a free lead reactivation campaign at no extra cost.</div>
+          <div class="pricing-note"><strong>Why non-refundable?</strong> Your $99 becomes calling credits on the Vapi platform — infrastructure cost, not a service fee. Zero appointments booked? We run a free lead reactivation campaign at no extra cost.</div>
         </div>
       </div>
 
       <div class="eyebrow text-center mb-32">Lead Reactivation</div>
-      <div class="pricing-card" style="max-width:560px; margin:0 auto 64px;">
+      <div class="pricing-card" style="max-width:560px;margin:0 auto 64px;">
         <div class="pricing-name">Performance-Based</div>
         <div class="pricing-price"><span class="amount">10%</span><span class="period">per recovered booking</span></div>
         <div class="pricing-subtitle">Zero upfront. Pay only when appointments are booked.</div>
@@ -2129,10 +1279,10 @@
       </div>
 
       <div class="eyebrow text-center mb-32">AI Receptionist</div>
-      <div class="pricing-card" style="max-width:440px; margin:0 auto 64px;">
+      <div class="pricing-card" style="max-width:440px;margin:0 auto 64px;">
         <div class="pricing-name">AI Receptionist — Solar</div>
         <div class="pricing-price"><span class="amount">$500</span><span class="period">/ month</span></div>
-        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(245,158,11,0.08); border:1px solid var(--border-accent); border-radius:6px; padding:5px 12px; font-size:0.8rem; color:var(--text-secondary); margin-bottom:12px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.08);border:1px solid var(--border-accent);border-radius:6px;padding:5px 12px;font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--accent);"></i> $500 one-time setup fee</div>
         <div class="pricing-subtitle">Built for solar companies. Handles every inbound call and books consultations automatically.</div>
         <ul class="pricing-features">
           <li class="pricing-feature"><i class="fa-solid fa-check"></i>Unlimited inbound call answering</li>
@@ -2150,11 +1300,9 @@
       </div>
     </div>
   </section>
-</div><!-- end pricing page -->
+</div><!-- end pricing -->
 
-<!-- ============================================================
-     CONTACT PAGE
-============================================================ -->
+<!-- ====== CONTACT PAGE ====== -->
 <div id="page-contact" class="page">
   <div class="page-hero section-wrap">
     <div class="container">
@@ -2165,33 +1313,20 @@
       </div>
     </div>
   </div>
-
   <section class="section-wrap" style="background:var(--bg-primary);">
     <div class="container">
       <div class="contact-form-wrap">
-        <!-- Form -->
+        <!-- LEFT: Form -->
         <div>
           <div class="eyebrow mb-24">Your Information</div>
           <div id="auditForm">
+            <div class="form-group"><label for="fname">Full Name</label><input type="text" id="fname" placeholder="John Smith" /></div>
+            <div class="form-group"><label for="fcompany">Company Name</label><input type="text" id="fcompany" placeholder="Solar Co." /></div>
+            <div class="form-group"><label for="femail">Email Address</label><input type="email" id="femail" placeholder="john@solarco.com" /></div>
+            <div class="form-group"><label for="fphone">Phone Number</label><input type="tel" id="fphone" placeholder="+1 (555) 000-0000" /></div>
             <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" placeholder="John Smith" />
-            </div>
-            <div class="form-group">
-              <label for="company">Company Name</label>
-              <input type="text" id="company" placeholder="Solar Co." />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="john@solarco.com" />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
-            </div>
-            <div class="form-group">
-              <label for="leads">Monthly Lead Volume</label>
-              <select id="leads">
+              <label for="fleads">Monthly Lead Volume</label>
+              <select id="fleads">
                 <option value="" disabled selected>Select range</option>
                 <option>Under 50</option>
                 <option>50–200</option>
@@ -2199,25 +1334,19 @@
                 <option>500+</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="challenge">Biggest Lead Follow-Up Challenge</label>
-              <textarea id="challenge" placeholder="Describe your current follow-up process and where you think leads are slipping..."></textarea>
-            </div>
+            <div class="form-group"><label for="fchallenge">Biggest Lead Follow-Up Challenge</label><textarea id="fchallenge" placeholder="Describe your current follow-up process and where you think leads are slipping..."></textarea></div>
             <button class="btn btn-primary btn-lg w-full" id="submitBtn" onclick="submitAuditForm()" style="justify-content:center;">
               <i class="fa-solid fa-magnifying-glass-chart"></i> Submit — Get My Free Audit
             </button>
-            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:12px; text-align:center;">We respond within 24 hours. No spam. No sales pressure.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:12px;text-align:center;">We respond within 24 hours. No spam. No sales pressure.</p>
           </div>
-
-          <!-- Success state shown after submission -->
           <div class="form-success" id="formSuccess">
             <i class="fa-solid fa-circle-check"></i>
             <h3>Audit Request Received!</h3>
             <p>Thanks — we'll review your lead volume and follow-up process and get back to you within 24 hours.</p>
           </div>
-
-          <div style="margin-top:20px; padding:16px; background:var(--bg-secondary); border-radius:8px; border:1px solid var(--border);">
-            <p style="font-size:0.85rem; color:var(--text-secondary);">
+          <div style="margin-top:20px;padding:16px;background:var(--bg-secondary);border-radius:8px;border:1px solid var(--border);">
+            <p style="font-size:0.85rem;color:var(--text-secondary);">
               <i class="fa-solid fa-envelope color-accent"></i>
               &nbsp;Prefer email? Reach us directly at
               <a href="mailto:umair@solarbooked.com" style="color:var(--accent);">umair@solarbooked.com</a>
@@ -2225,46 +1354,48 @@
           </div>
         </div>
 
-        <!-- Cal.com embed / booking -->
+        <!-- RIGHT: Cal.com booking -->
         <div>
           <div class="eyebrow mb-24">Or Book a Call Directly</div>
-          <!-- REPLACE: Cal.com embed code for booking -->
-          <div class="calcom-placeholder">
-            <i class="fa-regular fa-calendar-check"></i>
-            <p style="font-weight:600; margin-bottom:8px;">Book a 20-Minute Call</p>
-            <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:20px;">Pick a time that works for you. We'll review your lead process live and tell you exactly what we'd fix.</p>
-            <div style="background:var(--border); height:1px; margin:16px 0;"></div>
-            <p style="font-size:0.75rem; color:var(--text-muted);">Replace this section with your Cal.com embed code</p>
-          </div>
+          <!-- Cal.com inline embed -->
+          <div style="width:100%;min-height:500px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--border);" id="my-cal-inline-30min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) {
+              let p = function (a, ar) { a.q.push(ar); };
+              let d = C.document;
+              C.Cal = C.Cal || function () {
+                let cal = C.Cal; let ar = arguments;
+                if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
+                if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]);} else p(cal, ar); return; }
+                p(cal, ar);
+              };
+            })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "30min", {origin:"https://app.cal.com"});
+            Cal.ns["30min"]("inline", {
+              elementOrSelector:"#my-cal-inline-30min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"},
+              calLink: "solarbooked/30min",
+            });
+            Cal.ns["30min"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
 
-          <div style="margin-top:28px; background:var(--bg-secondary); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
-            <h3 style="font-size:1rem; margin-bottom:12px;">What happens after you submit?</h3>
-            <ul style="display:flex; flex-direction:column; gap:10px;">
-              <li style="display:flex; gap:12px; font-size:0.875rem; color:var(--text-secondary);">
-                <span style="color:var(--accent); font-weight:700; width:20px;">1.</span>
-                Umair personally reviews your lead volume and current follow-up process.
-              </li>
-              <li style="display:flex; gap:12px; font-size:0.875rem; color:var(--text-secondary);">
-                <span style="color:var(--accent); font-weight:700; width:20px;">2.</span>
-                We prepare a brief showing where leads are leaking and what it's costing you in revenue.
-              </li>
-              <li style="display:flex; gap:12px; font-size:0.875rem; color:var(--text-secondary);">
-                <span style="color:var(--accent); font-weight:700; width:20px;">3.</span>
-                You get a call to walk through the findings and decide if it makes sense to work together.
-              </li>
+          <div style="margin-top:28px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+            <h3 style="font-size:1rem;margin-bottom:12px;">What happens after you submit?</h3>
+            <ul style="display:flex;flex-direction:column;gap:10px;">
+              <li style="display:flex;gap:12px;font-size:0.875rem;color:var(--text-secondary);"><span style="color:var(--accent);font-weight:700;width:20px;">1.</span>Umair personally reviews your lead volume and current follow-up process.</li>
+              <li style="display:flex;gap:12px;font-size:0.875rem;color:var(--text-secondary);"><span style="color:var(--accent);font-weight:700;width:20px;">2.</span>We prepare a brief showing where leads are leaking and what it's costing you in revenue.</li>
+              <li style="display:flex;gap:12px;font-size:0.875rem;color:var(--text-secondary);"><span style="color:var(--accent);font-weight:700;width:20px;">3.</span>You get a call to walk through the findings and decide if it makes sense to work together.</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-</div><!-- end contact page -->
+</div><!-- end contact -->
 
 </div><!-- end main-content -->
 
-<!-- ============================================================
-     FOOTER (shared across all pages)
-============================================================ -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-cta-box">
@@ -2272,21 +1403,13 @@
         <strong>Ready to stop losing leads?</strong>
         <p>Get a free audit — no commitment, no pressure. We'll show you exactly what's leaking and how to fix it.</p>
       </div>
-      <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">
-        Book Your Free Audit →
-      </a>
+      <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Book Your Free Audit →</a>
     </div>
-
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="nav-logo">
-          <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
-          SolarBooked
-        </div>
+        <div class="nav-logo"><div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>SolarBooked</div>
         <p class="footer-tagline">Done-for-you voice AI that calls your leads in 60 seconds — so you close more deals without chasing anyone.</p>
-        <div class="footer-email">
-          <a href="mailto:umair@solarbooked.com"><i class="fa-solid fa-envelope"></i> umair@solarbooked.com</a>
-        </div>
+        <div class="footer-email"><a href="mailto:umair@solarbooked.com"><i class="fa-solid fa-envelope"></i> umair@solarbooked.com</a></div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -2306,64 +1429,53 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2026 SolarBooked. All rights reserved. Built by Umair Abdulla.</p>
-      <div class="footer-tcpa">
-        <i class="fa-solid fa-shield-halved"></i>
-        All calls TCPA compliant · DNC list validation included
-      </div>
+      <div class="footer-tcpa"><i class="fa-solid fa-shield-halved"></i>All calls TCPA compliant · DNC list validation included</div>
     </div>
   </div>
 </footer>
 
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
+<!-- ====== JAVASCRIPT ====== -->
 <script>
-  /* ====================
-     PAGE NAVIGATION
-     FIX: Simplified signature — no second param needed.
-     FIX: Decay bars and counters reset properly on page switch.
-  ==================== */
-  function showPage(pageId) {
-    // Hide all pages
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 
-    // Show target
+  /* ---------- HERO VIDEO PLAYER ---------- */
+  function playHeroVideo() {
+    var thumb = document.getElementById('videoThumbnail');
+    var video = document.getElementById('heroVideo');
+    if (!thumb || !video) return;
+    thumb.style.display = 'none';
+    video.style.display = 'block';
+    video.play();
+  }
+
+  /* ---------- PAGE NAVIGATION ---------- */
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
     var target = document.getElementById('page-' + pageId);
     if (target) target.classList.add('active');
 
-    // Update nav active state
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(a) {
       a.classList.remove('active');
       if (a.dataset.page === pageId) a.classList.add('active');
     });
 
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Pause hero video when leaving home
+    if (pageId !== 'home') {
+      var hv = document.getElementById('heroVideo');
+      if (hv && !hv.paused) hv.pause();
+    }
 
-    // Trigger fade-up animations for the new page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(initAnimations, 150);
 
-    // Re-run home-specific animations when switching to home
     if (pageId === 'home') {
-      // Reset decay bars so they animate again
-      document.querySelectorAll('.decay-bar').forEach(function(bar) {
-        bar.style.width = '0%';
-      });
-      // Reset counter done flags
-      document.querySelectorAll('.stat-num[data-target]').forEach(function(el) {
-        delete el.dataset.done;
-      });
-      setTimeout(function() {
-        animateDecayBars();
-        animateCounters();
-      }, 300);
+      document.querySelectorAll('.decay-bar').forEach(function(bar) { bar.style.width = '0%'; });
+      document.querySelectorAll('.stat-num[data-target]').forEach(function(el) { delete el.dataset.done; });
+      setTimeout(function() { animateDecayBars(); animateCounters(); }, 300);
     }
   }
 
-  /* FIX: scrollToPricing waits for the home page to render before scrolling */
   function scrollToPricing() {
     showPage('home');
     setTimeout(function() {
@@ -2372,14 +1484,10 @@
     }, 500);
   }
 
-  /* ====================
-     MOBILE MENU
-  ==================== */
+  /* ---------- MOBILE MENU ---------- */
   function toggleMobile() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
-
-  // Close mobile menu when clicking outside
   document.addEventListener('click', function(e) {
     var menu = document.getElementById('mobileMenu');
     var hamburger = document.getElementById('hamburger');
@@ -2388,50 +1496,18 @@
     }
   });
 
-  /* ====================
-     FAQ ACCORDION
-  ==================== */
+  /* ---------- FAQ ---------- */
   var faqs = [
-    {
-      q: "Will it sound robotic and damage my brand?",
-      a: "Modern voice AI is indistinguishable from human in a first-contact call. Your automated system uses your company name, your qualifying questions, your tone. You can hear it yourself in the demo above before committing to anything."
-    },
-    {
-      q: "What if a lead asks about tax credits, financing, or specific solar details?",
-      a: "The AI only handles qualification — confirming homeownership, monthly electricity bill, interest level, and booking the appointment. It does not discuss pricing, financing, or technical details. Those conversations happen with your human team on the booked call."
-    },
-    {
-      q: "Will it book unqualified leads and waste my team's time?",
-      a: "The qualification script is built around your specific requirements — homeowner status, bill size, location, interest level. Only leads meeting your criteria get booked. You define what 'qualified' means for your business."
-    },
-    {
-      q: "Is this TCPA compliant? What about the Do Not Call list?",
-      a: "All calls are made in compliance with TCPA regulations. DNC list validation is built into the system. Call recordings and opt-in logs are maintained. We do not call numbers without prior expressed interest — form submission, ad click, or inbound inquiry."
-    },
-    {
-      q: "Won't calling leads at 9pm irritate them?",
-      a: "You set the calling hours. Default is 8am–8pm in the lead's timezone. After-hours leads get queued for first-call next morning. You control exactly when calls are made."
-    },
-    {
-      q: "Will it integrate with my CRM — GoHighLevel, HubSpot, Salesforce?",
-      a: "We integrate with GoHighLevel, HubSpot, Salesforce, and most major CRMs. Call status, recordings, transcripts, and appointment details sync automatically. No manual data entry."
-    },
-    {
-      q: "What if the lead is already talking to a competitor?",
-      a: "The AI is scripted to handle this gracefully — acknowledging they're exploring options and positioning your company's response speed as a sign of how you treat customers. Exact language is customized to your brand voice."
-    },
-    {
-      q: "Who pays for the calls if it doesn't produce appointments?",
-      a: "The $99 trial covers 800 minutes of calling. If zero appointments are booked, we run a complimentary lead reactivation campaign on your existing dead leads. Monthly plan clients get full optimization support until the system is performing."
-    },
-    {
-      q: "How do I see what's happening — is there a dashboard?",
-      a: "Yes. You get a client dashboard showing all calls made, call recordings, transcripts, summaries, appointment status, and cost per call — updated in real time."
-    },
-    {
-      q: "Can it handle residential and commercial leads differently?",
-      a: "Yes. Residential and commercial leads use separate qualification scripts. Commercial leads can be routed directly to your B2B sales team. You define the routing logic during setup."
-    }
+    { q: "Will it sound robotic and damage my brand?", a: "Modern voice AI is indistinguishable from human in a first-contact call. Your automated system uses your company name, your qualifying questions, your tone. You can hear it yourself in the demo above before committing to anything." },
+    { q: "What if a lead asks about tax credits, financing, or specific solar details?", a: "The AI only handles qualification — confirming homeownership, monthly electricity bill, interest level, and booking the appointment. It does not discuss pricing, financing, or technical details. Those conversations happen with your human team on the booked call." },
+    { q: "Will it book unqualified leads and waste my team's time?", a: "The qualification script is built around your specific requirements — homeowner status, bill size, location, interest level. Only leads meeting your criteria get booked. You define what 'qualified' means for your business." },
+    { q: "Is this TCPA compliant? What about the Do Not Call list?", a: "All calls are made in compliance with TCPA regulations. DNC list validation is built into the system. Call recordings and opt-in logs are maintained. We do not call numbers without prior expressed interest — form submission, ad click, or inbound inquiry." },
+    { q: "Won't calling leads at 9pm irritate them?", a: "You set the calling hours. Default is 8am–8pm in the lead's timezone. After-hours leads get queued for first-call next morning. You control exactly when calls are made." },
+    { q: "Will it integrate with my CRM — GoHighLevel, HubSpot, Salesforce?", a: "We integrate with GoHighLevel, HubSpot, Salesforce, and most major CRMs. Call status, recordings, transcripts, and appointment details sync automatically. No manual data entry." },
+    { q: "What if the lead is already talking to a competitor?", a: "The AI is scripted to handle this gracefully — acknowledging they're exploring options and positioning your company's response speed as a sign of how you treat customers. Exact language is customized to your brand voice." },
+    { q: "Who pays for the calls if it doesn't produce appointments?", a: "The $99 trial covers 800 minutes of calling. If zero appointments are booked, we run a complimentary lead reactivation campaign on your existing dead leads. Monthly plan clients get full optimization support until the system is performing." },
+    { q: "How do I see what's happening — is there a dashboard?", a: "Yes. You get a client dashboard showing all calls made, call recordings, transcripts, summaries, appointment status, and cost per call — updated in real time." },
+    { q: "Can it handle residential and commercial leads differently?", a: "Yes. Residential and commercial leads use separate qualification scripts. Commercial leads can be routed directly to your B2B sales team. You define the routing logic during setup." }
   ];
 
   function buildFAQ() {
@@ -2457,44 +1533,29 @@
     var items = document.querySelectorAll('.faq-item');
     var answer = document.getElementById('faq-ans-' + index);
     var isOpen = items[index].classList.contains('open');
-
-    // Close all
     items.forEach(function(el, i) {
       el.classList.remove('open');
       var ans = document.getElementById('faq-ans-' + i);
       if (ans) ans.style.maxHeight = '0';
     });
-
-    // Open the clicked one if it was previously closed
     if (!isOpen) {
       items[index].classList.add('open');
       answer.style.maxHeight = answer.scrollHeight + 'px';
     }
   }
 
-  /* ====================
-     SCROLL ANIMATIONS
-     FIX: Runs on the currently active page only.
-  ==================== */
+  /* ---------- SCROLL ANIMATIONS ---------- */
   function initAnimations() {
     var elements = document.querySelectorAll('.page.active .fade-up');
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
     elements.forEach(function(el) { observer.observe(el); });
   }
 
-  /* ====================
-     COUNTER ANIMATION
-     FIX: Uses data-suffix attribute instead of hardcoded value checks.
-     FIX: Resets done flag when navigating back to home.
-  ==================== */
+  /* ---------- COUNTER ANIMATION ---------- */
   function animateCounters() {
     var counters = document.querySelectorAll('.page.active .stat-num[data-target]');
     var obs = new IntersectionObserver(function(entries) {
@@ -2516,11 +1577,7 @@
     counters.forEach(function(c) { obs.observe(c); });
   }
 
-  /* ====================
-     DECAY BARS
-     FIX: Uses a flag scoped to each observer call, not a global boolean.
-         Resets widths to 0 before re-observing (handled in showPage).
-  ==================== */
+  /* ---------- DECAY BARS ---------- */
   function animateDecayBars() {
     var bars = document.querySelectorAll('.page.active .decay-bar');
     var triggered = false;
@@ -2538,11 +1595,7 @@
     bars.forEach(function(b) { obs.observe(b); });
   }
 
-  /* ====================
-     AUDIO PLAYER
-     FIX: Full working audio player with play/pause toggle, progress bar,
-          seek support, and time display. Replace src in the <audio> tags.
-  ==================== */
+  /* ---------- AUDIO PLAYER ---------- */
   function formatTime(secs) {
     if (isNaN(secs) || !isFinite(secs)) return '0:00';
     var m = Math.floor(secs / 60);
@@ -2552,31 +1605,16 @@
 
   function toggleAudio(audioId, btnId, barId, timeId) {
     var audio = document.getElementById(audioId);
-    var btn = document.getElementById(btnId);
-    var bar = document.getElementById(barId);
+    var btn   = document.getElementById(btnId);
+    var bar   = document.getElementById(barId);
     var timeEl = document.getElementById(timeId);
-
     if (!audio) return;
 
-    // If the audio src is still the placeholder, alert and return
-    if (!audio.currentSrc || audio.currentSrc.indexOf('REPLACE_WITH_AUDIO_URL') !== -1) {
-      alert('Replace the audio src with your actual recording URL to enable playback.');
-      return;
-    }
-
     if (audio.paused) {
-      // Pause any other playing audio elements first
-      document.querySelectorAll('audio').forEach(function(a) {
-        if (a !== audio && !a.paused) a.pause();
-      });
-      // Update all other play buttons back to play icon
-      document.querySelectorAll('.audio-play-btn i').forEach(function(i) {
-        i.className = 'fa-solid fa-play';
-      });
-
+      document.querySelectorAll('audio').forEach(function(a) { if (a !== audio && !a.paused) a.pause(); });
+      document.querySelectorAll('.audio-play-btn i').forEach(function(i) { i.className = 'fa-solid fa-play'; });
       audio.play();
       btn.querySelector('i').className = 'fa-solid fa-pause';
-
       audio.ontimeupdate = function() {
         if (audio.duration) {
           var pct = (audio.currentTime / audio.duration) * 100;
@@ -2584,7 +1622,6 @@
           timeEl.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
         }
       };
-
       audio.onended = function() {
         btn.querySelector('i').className = 'fa-solid fa-play';
         bar.style.width = '0%';
@@ -2598,80 +1635,63 @@
 
   function seekAudio(event, audioId, barId) {
     var audio = document.getElementById(audioId);
-    var bar = document.getElementById(barId);
+    var bar   = document.getElementById(barId);
     if (!audio || !audio.duration) return;
     var rect = event.currentTarget.getBoundingClientRect();
-    var pct = (event.clientX - rect.left) / rect.width;
+    var pct  = (event.clientX - rect.left) / rect.width;
     audio.currentTime = pct * audio.duration;
     bar.style.width = (pct * 100) + '%';
   }
 
-  /* ====================
-     CONTACT FORM
-     FIX: Completed the truncated submitAuditForm function.
-          Added proper validation, success state display, and
-          a clear path for connecting to a real backend.
-  ==================== */
-  function submitAuditForm() {
-    var name = document.getElementById('name').value.trim();
-    var company = document.getElementById('company').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var phone = document.getElementById('phone').value.trim();
-    var leads = document.getElementById('leads').value;
-    var challenge = document.getElementById('challenge').value.trim();
+  /* ---------- CONTACT FORM (Google Apps Script backend) ---------- */
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxeeq8ZEbTL0dypA93U99qifgGfzzbS45dc64GoLZXWfJXMFsp5O4fYojGUuMDbwhl3Og/exec";
 
-    // Basic validation
-    if (!name) { alert('Please enter your full name.'); return; }
-    if (!email || email.indexOf('@') === -1) { alert('Please enter a valid email address.'); return; }
-    if (!phone) { alert('Please enter your phone number.'); return; }
+  async function submitAuditForm() {
+    var name      = document.getElementById('fname').value.trim();
+    var company   = document.getElementById('fcompany').value.trim();
+    var email     = document.getElementById('femail').value.trim();
+    var phone     = document.getElementById('fphone').value.trim();
+    var leads     = document.getElementById('fleads').value;
+    var challenge = document.getElementById('fchallenge').value.trim();
 
-    // Disable button to prevent double submission
+    if (!name)                              { alert('Please enter your full name.');         return; }
+    if (!email || email.indexOf('@') === -1){ alert('Please enter a valid email address.'); return; }
+    if (!phone)                             { alert('Please enter your phone number.');      return; }
+
     var btn = document.getElementById('submitBtn');
-    btn.disabled = true;
+    btn.disabled    = true;
     btn.textContent = 'Submitting…';
 
-    // ------------------------------------------------------------------
-    // REPLACE: Connect to your form backend here.
-    // Example using Formspree (replace YOUR_FORM_ID):
-    //
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    //   body: JSON.stringify({ name, company, email, phone, leads, challenge })
-    // })
-    // .then(function(res) {
-    //   if (res.ok) { showFormSuccess(); }
-    //   else { alert('Something went wrong. Please email umair@solarbooked.com directly.'); btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-magnifying-glass-chart"></i> Submit — Get My Free Audit'; }
-    // })
-    // .catch(function() {
-    //   alert('Network error. Please email umair@solarbooked.com directly.');
-    //   btn.disabled = false;
-    //   btn.innerHTML = '<i class="fa-solid fa-magnifying-glass-chart"></i> Submit — Get My Free Audit';
-    // });
-    // ------------------------------------------------------------------
-
-    // Simulated success for now (remove this once real backend is connected)
-    setTimeout(showFormSuccess, 800);
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ name: name, company: company, email: email, phone: phone, leads: leads, message: challenge, formType: 'contact' })
+      });
+      showFormSuccess();
+    } catch (err) {
+      btn.disabled    = false;
+      btn.innerHTML   = '<i class="fa-solid fa-magnifying-glass-chart"></i> Submit — Get My Free Audit';
+      alert('Something went wrong. Please email umair@solarbooked.com directly.');
+    }
   }
 
   function showFormSuccess() {
-    var form = document.getElementById('auditForm');
+    var form    = document.getElementById('auditForm');
     var success = document.getElementById('formSuccess');
-    if (form) form.style.display = 'none';
+    if (form)    form.style.display    = 'none';
     if (success) success.style.display = 'block';
   }
 
-  /* ====================
-     INITIALISE ON LOAD
-     FIX: Added missing initial call to initAnimations, animateCounters,
-          and animateDecayBars so the home page animates on first load.
-  ==================== */
+  /* ---------- INIT ON LOAD ---------- */
   document.addEventListener('DOMContentLoaded', function() {
     buildFAQ();
     initAnimations();
     animateCounters();
     animateDecayBars();
   });
+
 </script>
 </body>
 </html>
